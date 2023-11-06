@@ -1,4 +1,4 @@
-package com.example.fitproapp;
+package com.example.fitlifepro;
 
 import org.junit.Test;
 

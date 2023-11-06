@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">FitProApp</string>
+    <string name="app_name">FitLifePro</string>
+    <string name="txtStep1">Step 1 of 3</string>
+    <string name="txtWelcome">Welcome to\nFitLifePro Application</string>
+    <string name="txtWelcomeDescp">Personalized workouts will help you\ngain strength, get in better shape and\nembrace a healthy lifestyle</string>
+    <string name="txtGetStarted">Get Started</string>
+    <string name="txtSplashTitle">Have a good health</string>
+    <string name="txtSplashQuote">“Confidence comes from \ndiscipline and training.” \n—Robert Kiyosaki</string>
+    <string name="txtStep2">Step 2 of 3</string>
+    <string name="txtSelectLvl">Select your fitness level</string>
+    <string name="txtLvl">Beginner</string>
+    <string name="txtLvlDesc">You are new to fitness training</string>
+    <string name="txtNext">Next</string>
+    <string name="txtStep3">Step 3 of 3</string>
+    <string name="txtPersonalDetails">Personal Details</string>
+    <string name="txtPersonalDetailsDesc">Let us know about you to speed up the\nresult, Get fit with your personal workout\nplan!</string>
+    <string name="txtStart">Start</string>
+    <string name="txtHintName">Name</string>
+    <string name="txtHintEmail">Email</string>
+    <string name="txtHintBirthday">Birthday</string>
+    <string name="txtHintHeight">Height in cm</string>
+    <string name="txtHintWeight">Weight in kg</string>
+    <string name="txtMale">Male</string>
+    <string name="txtFemale">Female</string>
+    <string name="txtGender">Gender</string>
+    <string name="txtBirthday">Birthday</string>
+    <string name="txtPickADate">Pick a Date</string>
+    <string name="txtBtnSingIn">Sign in</string>
 </resources>
