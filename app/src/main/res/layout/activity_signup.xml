@@ -163,6 +163,7 @@
         android:id="@+id/textViewGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/baseline_transgender_24"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/txtGender"

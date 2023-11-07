@@ -13,7 +13,7 @@
         android:theme="@style/Theme.FitLifePro"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".HomePageActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
