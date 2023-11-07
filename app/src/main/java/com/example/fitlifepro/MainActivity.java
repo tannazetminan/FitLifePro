@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     // comment by Tom
+        //resolved the gradle issue
 
 
 
