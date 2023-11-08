@@ -1,17 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imgViewBGGray"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Sample Home Page"
+        android:layout_height="265dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bg_gray" />
+
+    <ImageView
+        android:id="@+id/imgViewAvatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtViewWelcomeHomePage"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001"
+        app:srcCompat="@drawable/female_avatar" />
+
+    <TextView
+        android:id="@+id/txtViewWelcomeHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="@string/txtWelcomeHomePage"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/txtViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewWelcomeHomePage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgViewProfileWidget"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="328dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/widget_profile" />
+
+    <ImageView
+        android:id="@+id/imgViewWorkoutPlanWidget"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="328dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/imgViewProfileWidget"
+        app:srcCompat="@drawable/widget_workoutplan" />
+
+    <ImageView
+        android:id="@+id/imgViewExerciseDemoWidget"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@+id/imgViewWorkoutPlanWidget"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:srcCompat="@drawable/widget_exercisedemos" />
+
+    <ImageView
+        android:id="@+id/imgViewProgressTracker"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewProfileWidget"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@drawable/widget_progresstracker" />
+
+    <ImageView
+        android:id="@+id/imgViewNutritionGuidance"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/imgViewProgressTracker"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewWorkoutPlanWidget"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@drawable/widget_nutritionguidance" />
+
+    <ImageView
+        android:id="@+id/imgViewBMICalc"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toEndOf="@+id/imgViewNutritionGuidance"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewExerciseDemoWidget"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/widget_bmicalculator" />
+
+    <ImageView
+        android:id="@+id/imgViewCalendar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewProgressTracker"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/widget_schedule" />
+
+    <ImageView
+        android:id="@+id/imgViewGymFinder"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCalendar"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewNutritionGuidance"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/widget_gymfinder" />
+
+    <ImageView
+        android:id="@+id/imgViewSettings"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toEndOf="@+id/imgViewGymFinder"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewBMICalc"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/widget_settings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

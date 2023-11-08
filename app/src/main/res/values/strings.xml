@@ -26,4 +26,5 @@
     <string name="txtBirthday">Birthday</string>
     <string name="txtPickADate">Pick a Date</string>
     <string name="txtBtnSingIn">Sign in</string>
+    <string name="txtWelcomeHomePage">Welcome,</string>
 </resources>
