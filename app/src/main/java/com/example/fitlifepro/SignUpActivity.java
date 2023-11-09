@@ -2,11 +2,14 @@ package com.example.fitlifepro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,7 +27,8 @@ import java.util.Calendar;
 
 public class SignUpActivity extends AppCompatActivity {
     //ActivitySignupBinding binding;
-    DatabaseHelper databaseHelper;
+    DatabaseHelper dbHelper;
+    DatabaseManager dbManager;
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
@@ -43,20 +47,30 @@ public class SignUpActivity extends AppCompatActivity {
         //pass object from SelectFitnessLvlActivity
         Bundle bundle = getIntent().getExtras();
         String fitness_level = bundle.getString("FITNESS_LEVEL", "NOTHING");
-        databaseHelper = new DatabaseHelper(this);
+        dbHelper = new DatabaseHelper(this);
 
         Button btnStart = findViewById(R.id.btnStartStep3);
-
+        Button datePickerButton = findViewById(R.id.datePickerButton);
         EditText editTxtName = findViewById(R.id.editTxtName);
         EditText editTxtEmail = findViewById(R.id.editTxtEmail);
         EditText editTxtHeight = findViewById(R.id.editTxtHeight);
         EditText editTxtWeight = findViewById(R.id.editTxtWeight);
         RadioGroup radGrpGender = findViewById(R.id.radGrpGender);
 
+        //initialize the Database Manager
+        dbManager = new DatabaseManager(this);
+        try {
+            dbManager.open();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         btnStart.setOnClickListener((View view) -> {
             try {
                 String name = editTxtName.getText().toString();
                 String email = editTxtEmail.getText().toString();
+                String birthday = datePickerButton.getText().toString();
                 String heightStr = editTxtHeight.getText().toString();
                 String weightStr = editTxtWeight.getText().toString();
                 String gender;
@@ -101,9 +115,18 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(SignUpActivity.this, "Invalid weight. Weight should be a number", Toast.LENGTH_SHORT).show();
                     }
                 }
+
+                //insert in the database
+                dbManager.insert(email, name, birthday, Integer.parseInt(weightStr), Integer.parseInt(heightStr), gender, fitness_level);
+
+
+                //check if it was added in the database
+                fetchData();
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
         });
     }
 
@@ -200,6 +223,25 @@ public class SignUpActivity extends AppCompatActivity {
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
+    }
+
+    public void fetchData() {
+        Cursor cursor = dbManager.fetch();
+
+        if (cursor.moveToFirst()) {
+
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_EMAIL));
+                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_NAME));
+                @SuppressLint("Range") String birthday = cursor.getString(cursor.getColumnIndex(DatabaseHelper.BIRTHDAY));
+                @SuppressLint("Range") String weight = cursor.getString(cursor.getColumnIndex(DatabaseHelper.WEIGHT));
+                @SuppressLint("Range") String height = cursor.getString(cursor.getColumnIndex(DatabaseHelper.HEIGHT));
+                @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.GENDER));
+                @SuppressLint("Range") String fitness_level = cursor.getString(cursor.getColumnIndex(DatabaseHelper.FITNESS_LEVEL));
+
+                Log.d("DBFITLIFEPRO", "Email: " + email + "; Name: " + name + "; Birthday: " + birthday
+                        + "; Weight: " + weight + "; Height: " + weight + "; Gender: " + gender + "; Fitness Level: " + fitness_level);
+
+        }
     }
 
 

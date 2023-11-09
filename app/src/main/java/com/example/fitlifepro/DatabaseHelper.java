@@ -23,8 +23,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             USER_EMAIL + " TEXT PRIMARY KEY NOT NULL, " +
             USER_NAME + " TEXT NOT NULL, " +
             BIRTHDAY + " DATE NOT NULL, " +
-            HEIGHT + " DECIMAL(10,2) NOT NULL, " +
-            WEIGHT + " DECIMAL(10,2) NOT NULL, " +
+            HEIGHT + " DECIMAL(10,1) NOT NULL, " +
+            WEIGHT + " DECIMAL(10,1) NOT NULL, " +
             GENDER + " TEXT NOT NULL, " +
             FITNESS_LEVEL + " TEXT NOT NULL);";
 

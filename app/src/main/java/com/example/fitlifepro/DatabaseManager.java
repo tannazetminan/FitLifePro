@@ -27,7 +27,7 @@ public class DatabaseManager {
         dbHelper.close();
     }
 
-    public void insert (String user_email, String user_name, String birthday, double weight, double height, String gender, String fitness_level) {
+    public void insert (String user_email, String user_name, String birthday, int weight, int height, String gender, String fitness_level) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.USER_EMAIL, user_email);
         contentValues.put(DatabaseHelper.USER_NAME, user_name);
@@ -49,7 +49,7 @@ public class DatabaseManager {
         return cursor;
     }
 
-    public int update(String user_email, String user_name, String birthday, double weight, double height, String gender, String fitness_level) {
+    public int update(String user_email, String user_name, String birthday, int weight, int height, String gender, String fitness_level) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.USER_EMAIL, user_email);
         contentValues.put(DatabaseHelper.USER_NAME, user_name);
