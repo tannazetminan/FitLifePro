@@ -122,6 +122,7 @@
         android:id="@+id/imgViewBMICalc"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:onClick="BMIPressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.42"

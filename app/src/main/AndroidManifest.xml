@@ -36,6 +36,10 @@
         <activity
             android:name=".SelectFitnessLvlActivity"
             android:exported="false" />
+        <activity
+            android:name=".BMICalculatorActivity"
+            android:exported="false" />
+        />
 
         <meta-data
             android:name="preloaded_fonts"
