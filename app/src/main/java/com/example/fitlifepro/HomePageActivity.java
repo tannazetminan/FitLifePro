@@ -20,8 +20,6 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-
-
         };
 
     public void ProfilePressed(View v) {
@@ -31,6 +29,11 @@ public class HomePageActivity extends AppCompatActivity {
 
     public void BMIPressed(View v) {
         Intent intent = new Intent(HomePageActivity.this, BMICalculatorActivity.class);
+        startActivity(intent);
+    }
+
+    public void NutritionPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, NutritionGuidanceActivity.class);
         startActivity(intent);
     }
 

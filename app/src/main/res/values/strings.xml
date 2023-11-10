@@ -28,4 +28,6 @@
     <string name="txtBtnSingIn">Sign in</string>
     <string name="txtWelcomeHomePage">Welcome,</string>
     <string name="txtProfile">Profile</string>
+    <string name="txtViewNutGuide">Nutrition Guidance</string>
+    <string name="txtViewNutGuideBanner">Featured Pick</string>
 </resources>
