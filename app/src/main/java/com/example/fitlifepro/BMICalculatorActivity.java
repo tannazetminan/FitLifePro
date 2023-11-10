@@ -21,7 +21,6 @@ public class BMICalculatorActivity extends AppCompatActivity {
 
         txtViewBMIResult = findViewById(R.id.txtViewBMIResult);
         txtViewBMIValue = findViewById(R.id.txtViewBMIValue);
-        btnCalculateBMI = findViewById(R.id.btnCalculateBMI);
 
         // Retrieve user information from the database and calculate BMI
        try {
@@ -30,6 +29,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
+
 
     private void calculateAndDisplayBMI() throws SQLDataException {
         // Fetch user information from the database
@@ -46,9 +46,26 @@ public class BMICalculatorActivity extends AppCompatActivity {
             double bmi = calculateBMI(weight, height);
 
             // Display BMI result
-            txtViewBMIValue.setText(String.format("%.2f", bmi));
-        }
+            txtViewBMIValue.setText(String.format("Your Body Mass Index is %.2f.", bmi));
 
+            // Determine BMI category
+            String bmiCategory = getBMICategory(bmi);
+
+            // Display BMI category
+            txtViewBMIResult.setText(String.format("This is considered %s",bmiCategory));
+        }
+    }
+
+    private String getBMICategory(double bmi) {
+        if (bmi < 18.5) {
+            return "Underweight";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            return "Normal Weight";
+        } else if (bmi >= 25 && bmi < 29.9) {
+            return "Overweight";
+        } else {
+            return "Obese";
+        }
     }
 
     private double calculateBMI(int weight, int height) {
