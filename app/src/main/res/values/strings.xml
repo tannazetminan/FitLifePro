@@ -29,7 +29,7 @@
     <string name="txtWelcomeHomePage">Welcome,</string>
     <string name="txtProfile">Profile</string>
     <string name="txtViewNutGuide">Nutrition Guidance</string>
-    <string name="txtViewNutGuideBanner">Featured Pick</string>
     <string name="txtViewExDemos"><![CDATA[Health & Exercises]]></string>
     <string name="txtViewExDemosBanner">Recommended Health Exercises</string>
+    <string name="txtViewNutWebView">Nutrition Guide</string>
 </resources>
