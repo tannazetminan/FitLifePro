@@ -13,14 +13,14 @@ public class NutritionGuidanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_guidance);
 
-        WebView webViewTop = findViewById(R.id.webViewTop);
+        WebView webViewNutGuide = findViewById(R.id.webViewNutGuide);
 
-        String webViewTopURL = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/qDW86yRo-A4?si=vJS_qsOn46FaeB4n\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
+        String webViewNutGuideURL = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/qDW86yRo-A4?si=vJS_qsOn46FaeB4n\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
 
-        webViewTop.loadData(webViewTopURL, "text/html", "utf-8");
+        webViewNutGuide.loadData(webViewNutGuideURL, "text/html", "utf-8");
 
-        webViewTop.getSettings().setJavaScriptEnabled(true);
+        webViewNutGuide.getSettings().setJavaScriptEnabled(true);
 
-        webViewTop.setWebChromeClient(new WebChromeClient());
+        webViewNutGuide.setWebChromeClient(new WebChromeClient());
     }
 }

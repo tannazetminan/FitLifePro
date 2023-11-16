@@ -4,34 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NutritionGuidanceActivity">
+    tools:context=".ExerciseDemosActivity">
 
     <TextView
-        android:id="@+id/txtViewNutGuide"
+        android:id="@+id/txtViewExDemos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/txtViewNutGuide"
+        android:text="@string/txtViewExDemos"
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/txtViewNutGuideBanner"
+        android:id="@+id/txtViewExDemosBanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtViewNutGuide"
+        android:layout_below="@id/txtViewExDemos"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/txtViewNutGuideBanner"
+        android:text="@string/txtViewExDemosBanner"
         android:textSize="25sp" />
 
     <WebView
-        android:id="@+id/webViewNutGuide"
+        android:id="@+id/webViewExDemos"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@id/txtViewNutGuideBanner"
+        android:layout_below="@id/txtViewExDemosBanner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:scrollbarSize="25sp" />
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>

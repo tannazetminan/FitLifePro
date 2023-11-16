@@ -20,7 +20,7 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        };
+        }
 
     public void ProfilePressed(View v) {
         Intent intent = new Intent(HomePageActivity.this, ProfileActivity.class);
@@ -37,5 +37,8 @@ public class HomePageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ExerciseDemosPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, ExerciseDemosActivity.class);
+    }
 }
 
