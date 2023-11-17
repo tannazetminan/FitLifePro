@@ -9,31 +9,27 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import java.util.List;
 
-public class NutritionVideoAdapter extends BaseAdapter
+public class ExerciseVideoAdapter extends BaseAdapter
 {
     List<Video> AdapterVideos;
     int SelectedInd = -1;
 
     // Constructor
-    public NutritionVideoAdapter(List<Video> adapterVideos, int selectedInd) {
+    public ExerciseVideoAdapter(List<Video> adapterVideos, int selectedInd) {
         AdapterVideos = adapterVideos;
         SelectedInd = selectedInd;
     }
 
     // Getter & Setter for AdapterVideos
-    public List<Video> getAdapterVideos() {
-        return AdapterVideos;
-    }
+    public List<Video> getAdapterVideos() { return AdapterVideos; }
 
     public void setAdapterVideos(List<Video> adapterVideos) {
         AdapterVideos = adapterVideos;
         notifyDataSetChanged();
     }
 
-    // Getter & Setter for SelectedInd
-    public int getSelectedInd() {
-        return SelectedInd;
-    }
+    // Getter and Setter for SelectedInd
+    public int getSelectedInd() { return SelectedInd; }
 
     public void setSelectedInd(int selectedInd) {
         SelectedInd = selectedInd;
@@ -58,25 +54,25 @@ public class NutritionVideoAdapter extends BaseAdapter
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        // Setting view = layout_nutrition_webview.xml
+        // Setting view = layout_exdemo_webview.xml
         if(view == null){
             view = LayoutInflater.from(viewGroup.getContext()).
-                    inflate(R.layout.layout_nutrition_webview, viewGroup, false);
+                    inflate(R.layout.layout_exdemo_webview, viewGroup, false);
         }
 
-        // Finding TextView inside layout_nutrition_webview.xml
-        TextView txtViewNutWebView = view.findViewById(R.id.txtViewNutWebView);
+        // Finding TextView inside layout_exdemo_webview.xml
+        TextView txtViewExDemoWebView = view.findViewById(R.id.txtViewExDemoWebView);
         // Dynamically assigning VideoName
-        txtViewNutWebView.setText(AdapterVideos.get(i).getVideoName());
+        txtViewExDemoWebView.setText(AdapterVideos.get(i).getVideoName());
 
-        // Finding WebView inside layout_nutrition_webview.xml
-        WebView webViewNutGuide = view.findViewById(R.id.webViewNutGuide);
+        // Finding WebView inside layout_exdemo_webview.xml
+        WebView webViewExDemo = view.findViewById(R.id.webViewExDemo);
         // Dynamically assigning VideoUrl
         String selectedURL = AdapterVideos.get(i).getVideoUrl();
         // Loading YouTube video
-        webViewNutGuide.loadData(selectedURL, "text/html", "utf-8");
-        webViewNutGuide.getSettings().setJavaScriptEnabled(true);
-        webViewNutGuide.setWebChromeClient(new WebChromeClient());
+        webViewExDemo.loadData(selectedURL, "text/html", "utf-8");
+        webViewExDemo.getSettings().setJavaScriptEnabled(true);
+        webViewExDemo.setWebChromeClient(new WebChromeClient());
 
         return view;
     }

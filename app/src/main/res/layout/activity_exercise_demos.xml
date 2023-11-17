@@ -12,25 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/txtViewExDemos"
         android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/txtViewExDemosBanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtViewExDemos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/txtViewExDemosBanner"
-        android:textSize="25sp" />
-
-    <WebView
-        android:id="@+id/webViewExDemos"
+    <ListView
+        android:id="@+id/listViewExDemos"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_below="@id/txtViewExDemosBanner"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
-
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtViewExDemos"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
