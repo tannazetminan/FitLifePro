@@ -66,7 +66,21 @@ public class DatabaseManager {
         return ret;
     }
 
-    public void delete () {
+    public void delete() {
         database.delete(DatabaseHelper.DATABASE_TABLE, null, null);
     }
+
+    public boolean hasData() {
+        boolean hasData = false;
+        Cursor cur = database.rawQuery("SELECT COUNT(*) FROM " + DatabaseHelper.DATABASE_TABLE, null);
+        if (cur != null) {
+            cur.moveToFirst();                       // Always one row returned.
+            if (cur.getInt (0) == 0) {               // Zero count means empty table.
+                hasData = false;
+            } else {hasData = true;}
+        }
+
+        return hasData;
+    }
 }
+

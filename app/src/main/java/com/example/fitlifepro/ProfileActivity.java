@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    //DatabaseHelper dbHelper;
+
     DatabaseManager dbManager;
 
     @Override
@@ -20,8 +20,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-        //dbHelper = new DatabaseHelper(this);
 
         ImageView btnBack = findViewById(R.id.imgViewArrowBack);
         TextView btnDeleteAccount = findViewById(R.id.txtViewDeleteAccount);
