@@ -48,6 +48,7 @@
         android:id="@+id/txtViewUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:text="Username"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewBGGray"

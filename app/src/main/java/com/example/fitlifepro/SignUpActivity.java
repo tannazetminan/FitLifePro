@@ -76,9 +76,9 @@ public class SignUpActivity extends AppCompatActivity {
                 String gender;
 
                 if (radGrpGender.getCheckedRadioButtonId() == R.id.radBtnFemale) {
-                    gender = "female";
+                    gender = "Female";
                 } else {
-                    gender = "male";
+                    gender = "Male";
                 }
 
                 boolean isEmailValid = isValidEmail(email);

@@ -47,7 +47,7 @@ public class SelectFitnessLvlActivity extends AppCompatActivity {
 
         btnNext.setOnClickListener((View view) -> {
 
-            String fitness_level = "beginner";
+            String fitness_level = "Beginner";
 
             if (myAdapter.getSelectedInd() == -1) {
                 Toast.makeText(this, "You must select your fitness level.", Toast.LENGTH_SHORT).show();
@@ -55,13 +55,13 @@ public class SelectFitnessLvlActivity extends AppCompatActivity {
                 int index = myAdapter.getSelectedInd();
                 switch (index) {
                     case 0:
-                        fitness_level = "beginner";
+                        fitness_level = "Beginner";
                         break;
                     case 1:
-                        fitness_level = "intermediate";
+                        fitness_level = "Intermediate";
                         break;
                     case 2:
-                        fitness_level = "advanced";
+                        fitness_level = "Advanced";
                         break;
                 }
                 Bundle bundle = new Bundle();

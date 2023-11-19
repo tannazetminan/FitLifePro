@@ -34,4 +34,5 @@
     <string name="txtViewExDemos"><![CDATA[Health & Exercises]]></string>
     <string name="txtUpdate">Update</string>
     <string name="txtDeleteAccount"><u>Permanently delete my account</u></string>
+    <string name="txtFitnessLvl">Fitness Level</string>
 </resources>
