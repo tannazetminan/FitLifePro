@@ -65,4 +65,8 @@ public class DatabaseManager {
         int ret = database.update(DatabaseHelper.DATABASE_TABLE, contentValues, whereClause, whereArgs);
         return ret;
     }
+
+    public void delete () {
+        database.delete(DatabaseHelper.DATABASE_TABLE, null, null);
+    }
 }
