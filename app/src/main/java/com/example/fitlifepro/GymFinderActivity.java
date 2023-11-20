@@ -1,3 +1,6 @@
+
+
+
 // GymFinderActivity.java
 package com.example.fitlifepro;
 import android.graphics.PixelFormat;
