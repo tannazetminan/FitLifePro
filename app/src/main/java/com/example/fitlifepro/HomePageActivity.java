@@ -71,5 +71,10 @@ public class HomePageActivity extends AppCompatActivity {
     public void ExerciseDemosPressed(View v) {
         Intent intent = new Intent(HomePageActivity.this, ExerciseDemosActivity.class);
     }
+
+    public void GymFinderPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, GymFinderActivity.class);
+        startActivity(intent);
+    }
 }
 

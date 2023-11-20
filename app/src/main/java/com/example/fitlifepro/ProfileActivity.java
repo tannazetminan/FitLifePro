@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -47,21 +44,22 @@ public class ProfileActivity extends AppCompatActivity {
         }
 
         //fetch all user data from the database
-        Cursor cursor = dbManager.fetch();
-        cursor.moveToFirst();
+        try (Cursor cursor = dbManager.fetch()) {
+            cursor.moveToFirst();
 
-        profileName.setText(cursor.getString(1));
-        profileEmail.setText(cursor.getString(0));
-        profileBirthday.setText(cursor.getString(2));
-        profileHeight.setText(cursor.getString(3));
-        profileWeight.setText(cursor.getString(4));
-        profileGender.setText(cursor.getString(5));
-        profileFitnessLvl.setText(cursor.getString(6));
+            profileName.setText(cursor.getString(1));
+            profileEmail.setText(cursor.getString(0));
+            profileBirthday.setText(cursor.getString(2));
+            profileHeight.setText(cursor.getString(3));
+            profileWeight.setText(cursor.getString(4));
+            profileGender.setText(cursor.getString(5));
+            profileFitnessLvl.setText(cursor.getString(6));
 
-        if (cursor.getString(5).equals("Male")) {
-            profileAvatar.setImageResource(R.drawable.male_avatar);
-        } else {
-            profileAvatar.setImageResource(R.drawable.female_avatar);
+            if (cursor.getString(5).equals("Male")) {
+                profileAvatar.setImageResource(R.drawable.male_avatar);
+            } else {
+                profileAvatar.setImageResource(R.drawable.female_avatar);
+            }
         }
 
         btnBack.setOnClickListener((View view) -> {

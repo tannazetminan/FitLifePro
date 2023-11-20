@@ -1,9 +1,12 @@
 package com.example.fitlifepro;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +22,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_calculator);
 
+        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
         txtViewBMIResult = findViewById(R.id.txtViewBMIResult);
         txtViewBMIValue = findViewById(R.id.txtViewBMIValue);
 
@@ -28,6 +32,12 @@ public class BMICalculatorActivity extends AppCompatActivity {
         } catch (SQLDataException e) {
             throw new RuntimeException(e);
         }
+
+        btnBack.setOnClickListener((View view) -> {
+            Intent intent = new Intent(BMICalculatorActivity.this, HomePageActivity.class);
+            startActivity(intent);
+        });
+
     }
 
 
@@ -76,7 +86,6 @@ public class BMICalculatorActivity extends AppCompatActivity {
         return weight / (heightInMeters * heightInMeters);
     }
 
-    // You can use this method as the onClick attribute in the XML layout
     public void calculateBMI(android.view.View view) throws SQLDataException {
         calculateAndDisplayBMI();
     }
