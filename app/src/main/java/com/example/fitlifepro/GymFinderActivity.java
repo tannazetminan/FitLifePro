@@ -1,73 +1,69 @@
-
-
-
 // GymFinderActivity.java
 package com.example.fitlifepro;
-import android.graphics.PixelFormat;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-import java.util.List;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 
 public class GymFinderActivity extends AppCompatActivity {
+    private static final String GYM_FINDER_URL = "https://www.google.com/maps/search/fitness";
+    private WebView webView;
 
-    private TextView gymInfoTextView; // Add this variable
-
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym_finder);
 
-        // Initialize the TextView
-        gymInfoTextView = findViewById(R.id.gymInfoTextView);
+        // Find WebView and Button in the layout
+        webView = findViewById(R.id.webView);
+        Button btnPreviousPage = findViewById(R.id.btnPreviousPage);
 
-        // Example usage
-        searchPlaces("gym");
-    }
+        // Set up the WebView
+        setupWebView();
 
-    private void searchPlaces(String query) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://nominatim.openstreetmap.org/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        NominatimService service = retrofit.create(NominatimService.class);
-
-        Call<List<NominatimPlace>> call = service.search(query, 5);
-        call.enqueue(new Callback<List<NominatimPlace>>() {
+        // Set click listener for the "Previous Page" button
+        btnPreviousPage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<NominatimPlace>> call, Response<List<NominatimPlace>> response) {
-                if (response.isSuccessful()) {
-                    List<NominatimPlace> places = response.body();
-                    // Process the list of places
-                    for (NominatimPlace place : places) {
-                        String displayName = place.getDisplayName();
-                        // Log the place information for debugging
-                        Log.d("GymFinderActivity", "Place: " + displayName);
-
-                        // Display gym information in the TextView
-                        gymInfoTextView.setText("Nearest Gym: " + displayName);
-                    }
-                } else {
-                    // Handle error
-                    Log.e("GymFinderActivity", "Error: " + response.message());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<NominatimPlace>> call, Throwable t) {
-                Log.e("GymFinderActivity", "Error: " + t.getMessage(), t);
+            public void onClick(View v) {
+                // Handle button click to go back to the home page
+                finish(); // Close the current activity to go back
             }
         });
+    }
 
+    @SuppressLint("SetJavaScriptEnabled")
+    private void setupWebView() {
+        // Enable JavaScript (if needed)
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        // Set WebViewClient to open links within the WebView
+        webView.setWebViewClient(new WebViewClient());
+
+        // Set WebChromeClient to display progress if desired
+        webView.setWebChromeClient(new WebChromeClient());
+
+        // Load the external webpage
+        webView.loadUrl(GYM_FINDER_URL);
+    }
+
+    // Override onBackPressed to handle WebView navigation
+    @Override
+    public void onBackPressed() {
+        // If the WebView can go back, go back in the WebView history
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            // Otherwise, perform default back button behavior
+            super.onBackPressed();
+        }
     }
 }

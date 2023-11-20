@@ -1,14 +1,28 @@
+<!-- res/layout/activity_gym_finder.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FF9800">
 
-    <!-- Add a TextView to display gym information -->
-    <TextView
-        android:id="@+id/gymInfoTextView"
+    <!-- Home page Button with custom background -->
+
+    <!-- WebView to display the external webpage -->
+    <Button
+        android:id="@+id/btnPreviousPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Gym Information will be displayed here"
-        android:textSize="16sp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#444444"
+        android:onClick="goBackToHomePage"
+        android:text="Home Page"
+        android:textColor="#FFFFFF" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnPreviousPage"
+        android:layout_centerInParent="true" />
+
 </RelativeLayout>
