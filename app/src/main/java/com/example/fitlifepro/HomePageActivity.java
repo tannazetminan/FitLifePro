@@ -58,6 +58,11 @@ public class HomePageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void WorkoutPlanPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, WorkoutPlanActivity.class);
+        startActivity(intent);
+    }
+
     public void BMIPressed(View v) {
         Intent intent = new Intent(HomePageActivity.this, BMICalculatorActivity.class);
         startActivity(intent);

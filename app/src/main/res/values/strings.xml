@@ -37,4 +37,8 @@
     <string name="txtFitnessLvl">Fitness Level</string>
     <string name="txtUpdatePersonalDetails">Update Personal Details</string>
     <string name="txtSaveChanges">Save Changes</string>
+    <string name="txtBuildYourPlan">Build Your Plan</string>
+    <string name="txtWeeklySchedule">Weekly Schedule</string>
+    <string name="txtTotalTimePerDay">Total Time Per Day</string>
+    <string name="txtLengthOfPlan">Length Of Plan</string>
 </resources>
