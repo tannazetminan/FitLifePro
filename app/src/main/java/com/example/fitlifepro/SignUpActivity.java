@@ -7,7 +7,6 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
-import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,11 +16,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.util.Patterns;
 import java.util.regex.Pattern;
-import android.widget.TextView;
+
 import android.widget.Toast;
 //import com.example.fitlifepro.databinding.ActivitySignupBinding;
-
-import org.w3c.dom.Text;
 
 import java.util.Calendar;
 
@@ -49,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         String fitness_level = bundle.getString("FITNESS_LEVEL", "NOTHING");
         dbHelper = new DatabaseHelper(this);
 
-        Button btnStart = findViewById(R.id.btnStartStep3);
+        Button btnStart = findViewById(R.id.btnStep3Start);
         Button datePickerButton = findViewById(R.id.datePickerButton);
         EditText editTxtName = findViewById(R.id.editTxtName);
         EditText editTxtEmail = findViewById(R.id.editTxtEmail);

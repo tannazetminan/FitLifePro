@@ -146,7 +146,6 @@
         android:id="@+id/txtViewBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:drawableLeft="@drawable/baseline_date_range_24"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/txtBirthday"
@@ -157,7 +156,7 @@
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewFitnessLvl"
-        app:layout_constraintVertical_bias="0.00999999" />
+        app:layout_constraintVertical_bias="0.01999998" />
 
     <TextView
         android:id="@+id/txtViewDisplayBirthday"

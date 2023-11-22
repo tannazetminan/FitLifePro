@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
         TextView profileWeight = findViewById(R.id.txtViewDisplayWeight);
         TextView profileHeight = findViewById(R.id.txtViewDisplayHeight);
         TextView profileGender = findViewById(R.id.txtViewDisplayGender);
+        Button btnUpdate = findViewById(R.id.btnUpdate);
 
         //initialize the Database Manager
         dbManager = new DatabaseManager(this);
@@ -73,6 +75,11 @@ public class ProfileActivity extends AppCompatActivity {
 
             //go back to sign up page
             Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        btnUpdate.setOnClickListener((View view) -> {
+            Intent intent = new Intent(ProfileActivity.this, UpdateProfileActivity.class);
             startActivity(intent);
         });
     }

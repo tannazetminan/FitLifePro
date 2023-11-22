@@ -35,4 +35,6 @@
     <string name="txtUpdate">Update</string>
     <string name="txtDeleteAccount"><u>Permanently delete my account</u></string>
     <string name="txtFitnessLvl">Fitness Level</string>
+    <string name="txtUpdatePersonalDetails">Update Personal Details</string>
+    <string name="txtSaveChanges">Save Changes</string>
 </resources>

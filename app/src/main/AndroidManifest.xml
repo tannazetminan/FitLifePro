@@ -18,8 +18,11 @@
         android:theme="@style/Theme.FitLifePro"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".GymFinderActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ExerciseDemosActivity"
             android:exported="false" />
