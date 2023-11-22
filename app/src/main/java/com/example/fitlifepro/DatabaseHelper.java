@@ -11,6 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
 
     public static final String DATABASE_TABLE = "USERS";
+    public static final String USER_ID = "_ID";
     public static final String USER_NAME = "user_name";
     public static final String USER_EMAIL = "user_email";
     public static final String BIRTHDAY = "birthday";
@@ -20,7 +21,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String FITNESS_LEVEL = "fitness_level";
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + DATABASE_TABLE + " ( " +
-            USER_EMAIL + " TEXT PRIMARY KEY NOT NULL, " +
+            USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            USER_EMAIL + " TEXT NOT NULL, " +
             USER_NAME + " TEXT NOT NULL, " +
             BIRTHDAY + " DATE NOT NULL, " +
             HEIGHT + " DECIMAL(10,1) NOT NULL, " +

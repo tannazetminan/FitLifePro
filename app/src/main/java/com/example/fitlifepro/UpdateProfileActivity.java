@@ -35,8 +35,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
         setContentView(R.layout.layout_update_profile);
         initDatePicker();
 
-
-
         Button datePickerButton = findViewById(R.id.datePickerUpdateButton);
         ImageView btnBack = findViewById(R.id.imgViewArrowBack);
         EditText updateName = findViewById(R.id.editTxtUpdateName);
@@ -59,7 +57,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //fetch all user data from the database
+        //fetch all user data from the database and display
         try (Cursor cursor = dbManager.fetch()) {
             cursor.moveToFirst();
 

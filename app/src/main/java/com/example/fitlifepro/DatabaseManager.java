@@ -59,10 +59,9 @@ public class DatabaseManager {
         contentValues.put(DatabaseHelper.GENDER, gender);
         contentValues.put(DatabaseHelper.FITNESS_LEVEL, fitness_level);
 
-        String whereClause = DatabaseHelper.USER_EMAIL + "=?";
-        String[] whereArgs = { user_email };
+        String whereClause = DatabaseHelper.USER_ID + "= 1";
 
-        int ret = database.update(DatabaseHelper.DATABASE_TABLE, contentValues, whereClause, whereArgs);
+        int ret = database.update(DatabaseHelper.DATABASE_TABLE, contentValues, whereClause, null);
         return ret;
     }
 
