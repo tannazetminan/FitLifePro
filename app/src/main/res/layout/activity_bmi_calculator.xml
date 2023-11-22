@@ -7,7 +7,7 @@
     tools:context=".BMICalculatorActivity">
 
     <ImageView
-        android:id="@+id/imgViewBGOrange"
+        android:id="@+id/imgViewUpdateTopBG"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGOrange" />
+        app:layout_constraintTop_toBottomOf="@+id/imgViewUpdateTopBG" />
 
     <TextView
         android:id="@+id/txtViewBMIResult"

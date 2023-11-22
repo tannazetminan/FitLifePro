@@ -7,14 +7,15 @@
     tools:context=".ProfileActivity">
 
     <ImageView
-        android:id="@+id/imgViewBGOrange"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:id="@+id/imgViewUpdateTopBG"
+        android:layout_width="450dp"
+        android:layout_height="395dp"
+        android:cropToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_orange" />
+        app:srcCompat="@drawable/background_design1" />
 
     <ImageView
         android:id="@+id/imgViewArrowBack"
@@ -25,17 +26,18 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_white" />
+        app:srcCompat="@drawable/btn_arrow" />
 
     <ImageView
         android:id="@+id/imgViewProfilePageAvatar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="115dp"
+        android:layout_height="114dp"
         app:layout_constraintBottom_toTopOf="@+id/txtViewName"
-        app:layout_constraintEnd_toEndOf="@+id/imgViewBGOrange"
-        app:layout_constraintStart_toStartOf="@+id/imgViewBGOrange"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGOrange"
-        app:layout_constraintVertical_bias="0.65999997"
+        app:layout_constraintEnd_toEndOf="@+id/imgViewUpdateTopBG"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/imgViewUpdateTopBG"
+        app:layout_constraintTop_toTopOf="@+id/imgViewUpdateTopBG"
+        app:layout_constraintVertical_bias="0.83"
         app:srcCompat="@drawable/female_avatar" />
 
     <TextView
@@ -51,8 +53,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGOrange"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47000003" />
 
     <TextView
         android:id="@+id/txtViewDisplayName"
@@ -66,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toEndOf="@+id/txtViewName"
         app:layout_constraintTop_toBottomOf="@+id/imgViewProfilePageAvatar"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <TextView
         android:id="@+id/txtViewEmail"
@@ -136,7 +138,7 @@
         android:text="@string/txtProfile"
         android:textColor="@color/white"
         android:textSize="34sp"
-        android:textStyle="bold"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
@@ -265,7 +267,7 @@
         android:id="@+id/btnUpdate"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="?android:attr/colorEdgeEffect"
         android:drawableLeft="@drawable/baseline_border_color_24"
         android:fontFamily="@font/quicksand_medium"
         android:foregroundGravity="center"

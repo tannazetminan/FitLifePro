@@ -27,7 +27,7 @@
     <ImageView
         android:id="@+id/imageViewWelcome"
         android:layout_width="275dp"
-        android:layout_height="280dp"
+        android:layout_height="260dp"
         android:layout_below="@+id/textViewStep2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewStep2"
         app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/welcome_step1" />
+        app:srcCompat="@drawable/splash2" />
 
     <TextView
         android:id="@+id/textViewLevelTitle"

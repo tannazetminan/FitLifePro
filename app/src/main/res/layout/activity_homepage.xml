@@ -6,16 +6,16 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imgViewBGGray"
-        android:layout_width="wrap_content"
-        android:layout_height="265dp"
+        android:id="@+id/imgViewTopBG"
+        android:layout_width="450dp"
+        android:layout_height="235dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bg_gray" />
+        app:srcCompat="@drawable/top_background" />
 
     <ImageView
         android:id="@+id/imgViewAvatar"
@@ -26,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003"
+        app:layout_constraintVertical_bias="0.18"
         app:srcCompat="@drawable/female_avatar" />
 
     <TextView
@@ -35,14 +35,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/txtWelcomeHomePage"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.381"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/txtViewUserName"
@@ -50,10 +50,11 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:text="Username"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewBGGray"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewTopBG"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewWelcomeHomePage"
         app:layout_constraintVertical_bias="0.0" />
@@ -67,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTopBG"
         app:layout_constraintVertical_bias="0.07"
         app:srcCompat="@drawable/widget_profile" />
 
@@ -79,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toEndOf="@+id/imgViewProfileWidget"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTopBG"
         app:layout_constraintVertical_bias="0.07"
         app:srcCompat="@drawable/widget_workoutplan" />
 
@@ -92,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/imgViewWorkoutPlanWidget"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBGGray"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTopBG"
         app:layout_constraintVertical_bias="0.07"
         app:srcCompat="@drawable/widget_exercisedemos" />
 

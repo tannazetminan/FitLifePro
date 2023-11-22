@@ -4,7 +4,7 @@
     <string name="txtWelcome">Welcome to\nFitLifePro Application</string>
     <string name="txtWelcomeDescp">Personalized workouts will help you\ngain strength, get in better shape and\nembrace a healthy lifestyle</string>
     <string name="txtGetStarted">Get Started</string>
-    <string name="txtSplashTitle">Have a good health</string>
+    <string name="txtSplashTitle">Everybody Can Train</string>
     <string name="txtSplashQuote">“Confidence comes from \ndiscipline and training.” \n—Robert Kiyosaki</string>
     <string name="txtStep2">Step 2 of 3</string>
     <string name="txtSelectLvl">Select your fitness level</string>
@@ -26,7 +26,7 @@
     <string name="txtBirthday">Birthday</string>
     <string name="txtPickADate">Pick a Date</string>
     <string name="txtBtnSingIn">Sign in</string>
-    <string name="txtWelcomeHomePage">Welcome,</string>
+    <string name="txtWelcomeHomePage">Welcome Back,</string>
     <string name="txtProfile">Profile</string>
     <string name="txtViewNutGuide">Nutrition Guidance</string>
     <string name="txtViewNutWebView">Nutrition Guide</string>
