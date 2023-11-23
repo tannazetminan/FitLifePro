@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">FitLifePro</string>
     <string name="txtStep1">Step 1 of 3</string>
-    <string name="txtWelcome">Welcome to\nFitLifePro Application</string>
+    <string name="txtWelcome">WELCOME TO</string>
+    <string name="txtFitLifePro">FITLIFEPRO</string>
     <string name="txtWelcomeDescp">Personalized workouts will help you\ngain strength, get in better shape and\nembrace a healthy lifestyle</string>
     <string name="txtGetStarted">Get Started</string>
     <string name="txtSplashTitle">Everybody Can Train</string>

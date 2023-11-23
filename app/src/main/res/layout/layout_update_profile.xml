@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/orange"
+    android:background="@drawable/background_blur"
     android:foregroundTint="@color/orange"
     android:orientation="vertical"
     tools:context=".UpdateProfileActivity">
@@ -13,60 +13,54 @@
         android:id="@+id/txtViewUpdateHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="34dp"
         android:drawableLeft="@drawable/baseline_height_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtHintHeight"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewUpdateWeight"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtViewUpdateWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="34dp"
         android:drawableLeft="@drawable/baseline_monitor_weight_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtHintWeight"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewUpdateBirthday"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtViewUpdateName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:drawableLeft="@drawable/baseline_person_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtHintName"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewUpdatePersonalDetailsTitle"
         app:layout_constraintVertical_bias="0.100000024" />
-
-    <ImageView
-        android:id="@+id/imgViewUpdateTopBG"
-        android:layout_width="420dp"
-        android:layout_height="220dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewUpdatePersonalDetailsTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/top_background" />
 
     <ImageView
         android:id="@+id/imgViewArrowBack"
@@ -77,17 +71,17 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btn_arrow_blue" />
+        app:srcCompat="@drawable/btn_arrow" />
 
 
     <TextView
         android:id="@+id/textViewUpdatePersonalDetailsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtUpdatePersonalDetails"
-        android:textColor="@color/gray"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,6 +99,7 @@
         android:drawablePadding="8dp"
         android:fontFamily="@font/quicksand_medium"
         android:padding="8dp"
+        android:textColor="@color/white"
         app:backgroundTint="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,6 +117,7 @@
         android:fontFamily="@font/quicksand_medium"
         android:inputType="text|textWebEmailAddress"
         android:padding="8dp"
+        android:textColor="@color/white"
         app:backgroundTint="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,74 +130,84 @@
         android:id="@+id/txtViewUpdateBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="34dp"
         android:drawableLeft="@drawable/baseline_date_range_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtBirthday"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUpdateEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewUpdateEmail"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtViewUpdateEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/baseline_email_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtHintEmail"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewUpdateName"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/datePickerUpdateButton"
         style="?android:spinnerStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
         android:onClick="openDatePicker"
         android:text="@string/txtPickADate"
-        android:textColor="@color/orange"
+        android:textColor="@color/white"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUpdateEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtUpdateEmail"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTxtUpdateHeight"
         android:layout_width="150dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="156dp"
         android:drawablePadding="8dp"
         android:inputType="number"
         android:padding="8dp"
+        android:textColor="@color/white"
         app:backgroundTint="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtUpdateWeight"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTxtUpdateWeight"
         android:layout_width="150dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="156dp"
         android:drawablePadding="8dp"
         android:inputType="number"
         android:padding="8dp"
+        android:textColor="@color/white"
         app:backgroundTint="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -214,23 +220,26 @@
         android:id="@+id/textViewUpdateGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="34dp"
         android:drawableLeft="@drawable/baseline_transgender_24"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtGender"
         android:textColor="#A8A5A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewUpdateHeight"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radGrpUpdateGender"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="35dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:gravity="right"
         android:orientation="horizontal"
@@ -239,7 +248,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtUpdateHeight"
-        app:layout_constraintVertical_bias="0.060000002">
+        app:layout_constraintVertical_bias="0.0">
 
 
         <RadioButton
@@ -249,7 +258,7 @@
             android:background="@drawable/radio_flat_selector"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:fontFamily="@font/quicksand_medium"
+            android:fontFamily="sans-serif"
             android:gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
@@ -262,7 +271,7 @@
             android:layout_height="48dp"
             android:background="@drawable/radio_flat_selector"
             android:button="@android:color/transparent"
-            android:fontFamily="@font/quicksand_medium"
+            android:fontFamily="sans-serif"
             android:gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
@@ -275,15 +284,15 @@
         android:id="@+id/btnSaveChanges"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/orange"
-        android:fontFamily="@font/quicksand_medium"
+        android:backgroundTint="#D05B28"
+        android:fontFamily="sans-serif"
         android:text="@string/txtSaveChanges"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGrpUpdateGender"
-        app:layout_constraintVertical_bias="0.26999998" />
+        app:layout_constraintVertical_bias="0.38" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

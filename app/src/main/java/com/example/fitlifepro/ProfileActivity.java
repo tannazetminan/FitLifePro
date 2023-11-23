@@ -26,7 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         ImageView btnBack = findViewById(R.id.imgViewArrowBack);
         TextView btnDeleteAccount = findViewById(R.id.txtViewDeleteAccount);
-        ImageView profileAvatar = findViewById(R.id.imgViewProfilePageAvatar);
+        //ImageView profileAvatar = findViewById(R.id.imgViewProfilePageAvatar);
         TextView profileName = findViewById(R.id.txtViewDisplayName);
         TextView profileEmail = findViewById(R.id.txtViewDisplayEmail);
         TextView profileFitnessLvl = findViewById(R.id.txtViewDisplayFitnessLvl);
@@ -57,11 +57,11 @@ public class ProfileActivity extends AppCompatActivity {
             profileGender.setText(cursor.getString(5));
             profileFitnessLvl.setText(cursor.getString(6));
 
-            if (cursor.getString(6).equals("Male")) {
-                profileAvatar.setImageResource(R.drawable.male_avatar);
-            } else {
-                profileAvatar.setImageResource(R.drawable.female_avatar);
-            }
+//            if (cursor.getString(6).equals("Male")) {
+//                profileAvatar.setImageResource(R.drawable.male_avatar);
+//            } else {
+//                profileAvatar.setImageResource(R.drawable.female_avatar);
+//            }
         }
 
         btnBack.setOnClickListener((View view) -> {

@@ -82,7 +82,7 @@ public class FitnessLvlAdapter extends BaseAdapter {
        if (i == SelectedInd) {
            imgViewCheck.setImageResource(R.drawable.baseline_check_orange);
         } else {
-            imgViewCheck.setImageResource(R.drawable.baseline_check_white);
+            imgViewCheck.setImageResource(R.drawable.baseline_check_black);
        }
 
         return view;

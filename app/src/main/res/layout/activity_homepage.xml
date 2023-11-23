@@ -7,20 +7,22 @@
 
     <ImageView
         android:id="@+id/imgViewTopBG"
-        android:layout_width="450dp"
+        android:layout_width="380dp"
         android:layout_height="235dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/top_background" />
+        app:srcCompat="@drawable/banner_squat" />
 
     <ImageView
         android:id="@+id/imgViewAvatar"
         android:layout_width="90dp"
         android:layout_height="90dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtViewWelcomeHomePage"
         app:layout_constraintHorizontal_bias="0.57"
@@ -33,13 +35,15 @@
         android:id="@+id/txtViewWelcomeHomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/txtWelcomeHomePage"
+        android:textColor="#E2FEFEFE"
         android:textSize="16sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.381"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
@@ -48,13 +52,15 @@
         android:id="@+id/txtViewUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:gravity="left"
         android:text="Username"
+        android:textColor="#E2FEFEFE"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewTopBG"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewWelcomeHomePage"
         app:layout_constraintVertical_bias="0.0" />

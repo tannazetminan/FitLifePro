@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_black">
 
     <TextView
         android:id="@+id/textViewStep2"
@@ -12,11 +13,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:clipToOutline="true"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:shadowColor="@color/orange"
         android:text="@string/txtStep2"
-        android:textColor="@color/orange"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +34,7 @@
         android:fontFamily="@font/quicksand_medium"
         android:gravity="center"
         android:text="@string/txtSelectLvl"
-        android:textColor="@color/gray"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +73,7 @@
         android:id="@+id/btnNextStep2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="#D05B28"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/txtNext"
         android:textSize="24sp"
