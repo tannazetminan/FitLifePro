@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class ProfileActivity extends AppCompatActivity {
 
 
-    DatabaseManager dbManager;
+    UserDatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         Button btnUpdate = findViewById(R.id.btnUpdate);
 
         //initialize the Database Manager
-        dbManager = new DatabaseManager(this);
+        dbManager = new UserDatabaseManager(this);
         try {
             dbManager.open();
 

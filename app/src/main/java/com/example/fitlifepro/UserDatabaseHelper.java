@@ -1,12 +1,10 @@
 package com.example.fitlifepro;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class UserDatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "FITLIFEPRO.DB";
     public static final int DATABASE_VERSION = 1;
 
@@ -30,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             GENDER + " TEXT NOT NULL, " +
             FITNESS_LEVEL + " TEXT NOT NULL);";
 
-    public DatabaseHelper(@Nullable Context context) {
+    public UserDatabaseHelper(@Nullable Context context) {
 
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
