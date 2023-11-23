@@ -43,14 +43,14 @@ public class BMICalculatorActivity extends AppCompatActivity {
 
     private void calculateAndDisplayBMI() throws SQLDataException {
         // Fetch user information from the database
-        DatabaseManager dbManager = new DatabaseManager(this);
+        UserDatabaseManager dbManager = new UserDatabaseManager(this);
         dbManager.open();
         Cursor cursor = dbManager.fetch();
 
         if (cursor != null && cursor.moveToFirst()) {
             // Extract weight and height from the database
-            @SuppressLint("Range") int weight = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.WEIGHT));
-            @SuppressLint("Range") int height = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.HEIGHT));
+            @SuppressLint("Range") int weight = cursor.getInt(cursor.getColumnIndex(UserDatabaseHelper.WEIGHT));
+            @SuppressLint("Range") int height = cursor.getInt(cursor.getColumnIndex(UserDatabaseHelper.HEIGHT));
 
             // Calculate BMI
             double bmi = calculateBMI(weight, height);

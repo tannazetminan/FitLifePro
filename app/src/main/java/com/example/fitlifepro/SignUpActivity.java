@@ -24,8 +24,8 @@ import java.util.Calendar;
 
 public class SignUpActivity extends AppCompatActivity {
     //ActivitySignupBinding binding;
-    DatabaseHelper dbHelper;
-    DatabaseManager dbManager;
+    UserDatabaseHelper dbHelper;
+    UserDatabaseManager dbManager;
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
@@ -44,7 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
         //pass object from SelectFitnessLvlActivity
         Bundle bundle = getIntent().getExtras();
         String fitness_level = bundle.getString("FITNESS_LEVEL", "NOTHING");
-        dbHelper = new DatabaseHelper(this);
+        dbHelper = new UserDatabaseHelper(this);
 
         Button btnStart = findViewById(R.id.btnStep3Start);
         Button datePickerButton = findViewById(R.id.datePickerButton);
@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
         RadioGroup radGrpGender = findViewById(R.id.radGrpGender);
 
         //initialize the Database Manager
-        dbManager = new DatabaseManager(this);
+        dbManager = new UserDatabaseManager(this);
         try {
             dbManager.open();
 
@@ -227,13 +227,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
 
-                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_EMAIL));
-                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_NAME));
-                @SuppressLint("Range") String birthday = cursor.getString(cursor.getColumnIndex(DatabaseHelper.BIRTHDAY));
-                @SuppressLint("Range") String weight = cursor.getString(cursor.getColumnIndex(DatabaseHelper.WEIGHT));
-                @SuppressLint("Range") String height = cursor.getString(cursor.getColumnIndex(DatabaseHelper.HEIGHT));
-                @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.GENDER));
-                @SuppressLint("Range") String fitness_level = cursor.getString(cursor.getColumnIndex(DatabaseHelper.FITNESS_LEVEL));
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_EMAIL));
+                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_NAME));
+                @SuppressLint("Range") String birthday = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.BIRTHDAY));
+                @SuppressLint("Range") String weight = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.WEIGHT));
+                @SuppressLint("Range") String height = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.HEIGHT));
+                @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.GENDER));
+                @SuppressLint("Range") String fitness_level = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.FITNESS_LEVEL));
 
                 Log.d("DBFITLIFEPRO", "Email: " + email + "; Name: " + name + "; Birthday: " + birthday
                         + "; Weight: " + weight + "; Height: " + weight + "; Gender: " + gender + "; Fitness Level: " + fitness_level);

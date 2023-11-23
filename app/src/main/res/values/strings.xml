@@ -39,6 +39,17 @@
     <string name="txtSaveChanges">Save Changes</string>
     <string name="txtBuildYourPlan">Build Your Plan</string>
     <string name="txtWeeklySchedule">Weekly Schedule</string>
-    <string name="txtTotalTimePerDay">Total Time Per Day</string>
     <string name="txtLengthOfPlan">Length Of Plan</string>
+    <string name="txtActivityTypes">Activity Types</string>
+    <string name="txtDifficulty">The following activities are based on your fitness level: </string>
+    <string name="txtStartWorkout">Start Workout</string>
+    <string-array name="lengthOfPlan">
+        <item>2 Weeks</item>
+        <item>3 Weeks</item>
+        <item>4 Weeks</item>
+        <item>5 Weeks</item>
+        <item>6 Weeks</item>
+        <item>7 Weeks</item>
+        <item>8 Weeks</item>
+    </string-array>
 </resources>

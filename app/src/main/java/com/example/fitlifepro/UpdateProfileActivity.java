@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -23,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class UpdateProfileActivity extends AppCompatActivity {
 
-    DatabaseManager dbManager;
+    UserDatabaseManager dbManager;
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
@@ -49,7 +48,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         String fitnessLvl;
 
         //initialize the Database Manager
-        dbManager = new DatabaseManager(this);
+        dbManager = new UserDatabaseManager(this);
         try {
             dbManager.open();
 

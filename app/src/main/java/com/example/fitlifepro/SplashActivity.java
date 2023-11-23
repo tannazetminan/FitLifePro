@@ -10,7 +10,7 @@ import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
 
-    DatabaseManager dbManager;
+    UserDatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         //initialize the Database Manager
-        dbManager = new DatabaseManager(this);
+        dbManager = new UserDatabaseManager(this);
         try {
             dbManager.open();
 
