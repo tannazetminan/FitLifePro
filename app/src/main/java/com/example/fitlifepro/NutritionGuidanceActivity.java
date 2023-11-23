@@ -1,8 +1,10 @@
 package com.example.fitlifepro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -14,17 +16,33 @@ public class NutritionGuidanceActivity extends AppCompatActivity {
     List<String> URLs = new ArrayList<>();
     List<Video> VideoList = new ArrayList<>();
 
+    Button btnNutGuideBack;
+    Button btnNutGuideRem;
+
+    ListView listViewNutGuide;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_guidance);
 
+        btnNutGuideBack = findViewById(R.id.btnNutGuideBack);
+        btnNutGuideRem = findViewById(R.id.btnNutGuideRem);
+
+        btnNutGuideBack.setOnClickListener((View view) -> {
+            startActivity(new Intent(NutritionGuidanceActivity.this, HomePageActivity.class));
+        });
+
+        btnNutGuideRem.setOnClickListener((View view) -> {
+            startActivity(new Intent(NutritionGuidanceActivity.this, ReminderViewActivity.class));
+        });
+
         loadVideos();
 
-        // Finding a ListView inside activity_nutrition_guidance.xml
-        ListView listViewNutGuide = findViewById(R.id.listViewNutGuide);
         // Creating an adapter
         NutritionVideoAdapter nutVidAdapter = new NutritionVideoAdapter(VideoList, 1);
+        // Finding a ListView inside activity_nutrition_guidance.xml
+        listViewNutGuide = findViewById(R.id.listViewNutGuide);
         // Setting the adapter to ListView
         listViewNutGuide.setAdapter(nutVidAdapter);
 

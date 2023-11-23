@@ -43,6 +43,22 @@
     <string name="txtActivityTypes">Activity Types</string>
     <string name="txtDifficulty">The following activities are based on your fitness level: </string>
     <string name="txtStartWorkout">Start Workout</string>
+    <string name="btnRemAddBack">Back</string>
+    <string name="btnRemSave">Save</string>
+    <string name="editTextMemo">Enter a short reminder here.</string>
+    <string name="txtViewRemAdd">Setting a date and a reminder</string>
+    <string name="txtViewRemView">Checking reminders</string>
+    <string name="txtViewRemViewSelected">Memo selected: </string>
+    <string name="btnRemViewBack">Add new</string>
+    <string name="btnRemViewDelete">Delete</string>
+    <string name="txtViewRemMemo">reminder memo</string>
+    <string name="txtViewRemDate">reminder date</string>
+    <string name="snackBarRem">Checking all reminders?</string>
+    <string name="snackBarAct">See all</string>
+    <string name="btnExDemosBack">Back</string>
+    <string name="btnExDemosRem">Reminders</string>
+    <string name="btnNutGuideBack">Back</string>
+    <string name="btnNutGuideRem">Reminders</string>
     <string-array name="lengthOfPlan">
         <item>2 Weeks</item>
         <item>3 Weeks</item>

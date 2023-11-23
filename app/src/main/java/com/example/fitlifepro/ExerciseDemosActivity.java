@@ -1,9 +1,11 @@
 package com.example.fitlifepro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +16,33 @@ public class ExerciseDemosActivity extends AppCompatActivity {
     List<String> URLs = new ArrayList<>();
     List<Video> VideoList = new ArrayList<>();
 
+    Button btnExDemosBack;
+    Button btnExDemosRem;
+
+    ListView listViewExDemos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_demos);
 
+        btnExDemosBack = findViewById(R.id.btnExDemosBack);
+        btnExDemosRem = findViewById(R.id.btnExDemosRem);
+
+        btnExDemosBack.setOnClickListener((View view) -> {
+            startActivity(new Intent(ExerciseDemosActivity.this, HomePageActivity.class));
+        });
+
+        btnExDemosRem.setOnClickListener((View view) -> {
+            startActivity(new Intent(ExerciseDemosActivity.this, ReminderViewActivity.class));
+        });
+
         loadVideos();
 
-        // Finding a ListView inside activity_exercise_demos.xml
-        ListView listViewExDemos = findViewById(R.id.listViewExDemos);
         // Creating an adapter
         ExerciseVideoAdapter exVidAdapter = new ExerciseVideoAdapter(VideoList, 1);
+        // Finding a ListView inside activity_exercise_demos.xml
+        listViewExDemos = findViewById(R.id.listViewExDemos);
         // Setting the adapter to ListView
         listViewExDemos.setAdapter(exVidAdapter);
 
