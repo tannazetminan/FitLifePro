@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class ProfileActivity extends AppCompatActivity {
 
 
-    UserDatabaseManager dbManager;
+    DatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         Button btnUpdate = findViewById(R.id.btnUpdate);
 
         //initialize the Database Manager
-        dbManager = new UserDatabaseManager(this);
+        dbManager = new DatabaseManager(this);
         try {
             dbManager.open();
 
@@ -46,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
 
         //fetch all user data from the database
-        try (Cursor cursor = dbManager.fetch()) {
+        try (Cursor cursor = dbManager.fetchUser()) {
             cursor.moveToFirst();
 
             profileName.setText(cursor.getString(1));
@@ -57,7 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
             profileGender.setText(cursor.getString(5));
             profileFitnessLvl.setText(cursor.getString(6));
 
-            if (cursor.getString(5).equals("Male")) {
+            if (cursor.getString(6).equals("Male")) {
                 profileAvatar.setImageResource(R.drawable.male_avatar);
             } else {
                 profileAvatar.setImageResource(R.drawable.female_avatar);
@@ -70,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         btnDeleteAccount.setOnClickListener((View view) -> {
-            dbManager.delete();
+            dbManager.deleteUser();
             Toast.makeText(ProfileActivity.this, "Your account was permanently deleted.", Toast.LENGTH_SHORT).show();
 
             //go back to sign up page

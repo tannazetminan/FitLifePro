@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class UpdateProfileActivity extends AppCompatActivity {
 
-    UserDatabaseManager dbManager;
+    DatabaseManager dbManager;
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
@@ -48,7 +48,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         String fitnessLvl;
 
         //initialize the Database Manager
-        dbManager = new UserDatabaseManager(this);
+        dbManager = new DatabaseManager(this);
         try {
             dbManager.open();
 
@@ -57,7 +57,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         }
 
         //fetch all user data from the database and display
-        try (Cursor cursor = dbManager.fetch()) {
+        try (Cursor cursor = dbManager.fetchUser()) {
             cursor.moveToFirst();
 
             updateName.setText(cursor.getString(1));
@@ -138,7 +138,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 }
 
                 //insert in the database
-                dbManager.update(email, name, birthday, Integer.parseInt(weightStr), Integer.parseInt(heightStr), updatedGender, fitnessLvl);
+                dbManager.updateUser(email, name, birthday, Integer.parseInt(weightStr), Integer.parseInt(heightStr), updatedGender, fitnessLvl);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

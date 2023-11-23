@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    UserDatabaseManager dbManager;
+    DatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         //initialize the Database Manager
-        dbManager = new UserDatabaseManager(this);
+        dbManager = new DatabaseManager(this);
         try {
             dbManager.open();
 
@@ -31,7 +31,7 @@ public class HomePageActivity extends AppCompatActivity {
         ImageView userImage = findViewById(R.id.imgViewAvatar);
 
         //fetch name from the database
-        Cursor cursor = dbManager.fetch();
+        Cursor cursor = dbManager.fetchUser();
         cursor.moveToFirst();
         userName.setText(cursor.getString(1));
 
