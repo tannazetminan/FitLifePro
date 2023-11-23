@@ -10,8 +10,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:shadowColor="@color/orange"
         android:text="@string/txtViewExDemoWebView"
-        android:textSize="25sp" />
+        android:textColor="@color/orange"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <WebView
         android:id="@+id/webViewExDemo"
