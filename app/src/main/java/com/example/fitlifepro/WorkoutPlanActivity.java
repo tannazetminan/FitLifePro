@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
 
 public class WorkoutPlanActivity extends AppCompatActivity {
     DatabaseManager dbManager;
@@ -44,6 +46,10 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         CheckBox checkBoxSaturday = findViewById(R.id.checkBoxSaturday);
         CheckBox checkBoxSunday = findViewById(R.id.checkBoxSunday);
         Button btnStartWorkout = findViewById(R.id.btnStartWorkout);
+        ImageView typeChestMuscles = findViewById(R.id.imgViewActivity1);
+        ImageView typeAbdominalMuscles = findViewById(R.id.imgViewActivity2);
+        ImageView typeArmMuscles = findViewById(R.id.imgViewActivity3);
+        ImageView typeLegMuscles = findViewById(R.id.imgViewActivity4);
 
 
 
@@ -97,6 +103,8 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                         break;
                 }
 
+
+                //determine the days the user wanted to workout
                 if (checkBoxMonday.isChecked()) {
                     mondaySelected = true;
                 }
@@ -118,6 +126,12 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                 if (checkBoxSunday.isChecked()) {
                     sundaySelected = true;
                 }
+
+                //get the Activity Types selected
+
+
+
+
                 Date c = Calendar.getInstance().getTime();
 
                 SimpleDateFormat df = new SimpleDateFormat("MMM-dd-yyyy", Locale.getDefault());

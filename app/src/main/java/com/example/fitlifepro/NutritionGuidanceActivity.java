@@ -34,7 +34,7 @@ public class NutritionGuidanceActivity extends AppCompatActivity {
         });
 
         btnNutGuideRem.setOnClickListener((View view) -> {
-            startActivity(new Intent(NutritionGuidanceActivity.this, ReminderViewActivity.class));
+            startActivity(new Intent(NutritionGuidanceActivity.this, ReminderAddActivity.class));
         });
 
         loadVideos();

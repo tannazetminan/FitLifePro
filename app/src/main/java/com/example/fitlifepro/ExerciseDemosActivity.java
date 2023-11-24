@@ -34,7 +34,7 @@ public class ExerciseDemosActivity extends AppCompatActivity {
         });
 
         btnExDemosRem.setOnClickListener((View view) -> {
-            startActivity(new Intent(ExerciseDemosActivity.this, ReminderViewActivity.class));
+            startActivity(new Intent(ExerciseDemosActivity.this, ReminderAddActivity.class));
         });
 
         loadVideos();

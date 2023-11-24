@@ -16,7 +16,7 @@
         android:fontFamily="@font/quicksand_medium"
         android:gravity="center_horizontal"
         android:text="@string/txtViewExDemos"
-        android:textColor="@color/orange"
+        android:textColor="@color/gray"
         android:textSize="25sp"
         android:textStyle="bold" />
 
