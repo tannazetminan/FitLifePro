@@ -29,7 +29,7 @@ public class ReminderHelper extends SQLiteOpenHelper
     // Constructor
     public ReminderHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        // this.db = db;
+        this.db = db;
     }
 
     @Override
