@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 //insert in the database
-                dbManager.insertUser(email, name, birthday, Integer.parseInt(weightStr), Integer.parseInt(heightStr), gender, fitness_level);
+                dbManager.insertUser(email, name, birthday, Integer.parseInt(heightStr), Integer.parseInt(weightStr), gender, fitness_level);
 
 
                 //check if it was added in the database

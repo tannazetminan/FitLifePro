@@ -5,14 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -29,6 +35,10 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     boolean fridaySelected = false;
     boolean saturdaySelected = false;
     boolean sundaySelected = false;
+    boolean chestSelected = false;
+    boolean abdominalSelected = false;
+    boolean armSelected = false;
+    boolean legSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +46,6 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_workout_plan);
 
         ImageView btnBack = findViewById(R.id.imgViewBtnBackWorkoutPlan);
-        TextView fitnessLvl = findViewById(R.id.txtViewPlanFitnessLvl);
         Spinner spinnerLengthOfPlan = findViewById(R.id.spinnerLengthOfPlan);
         CheckBox checkBoxMonday = findViewById(R.id.checkBoxMonday);
         CheckBox checkBoxTuesday = findViewById(R.id.checkBoxTuesday);
@@ -46,10 +55,10 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         CheckBox checkBoxSaturday = findViewById(R.id.checkBoxSaturday);
         CheckBox checkBoxSunday = findViewById(R.id.checkBoxSunday);
         Button btnStartWorkout = findViewById(R.id.btnStartWorkout);
-        ImageView typeChestMuscles = findViewById(R.id.imgViewActivity1);
-        ImageView typeAbdominalMuscles = findViewById(R.id.imgViewActivity2);
-        ImageView typeArmMuscles = findViewById(R.id.imgViewActivity3);
-        ImageView typeLegMuscles = findViewById(R.id.imgViewActivity4);
+        CheckBox checkBoxChestMuscles = findViewById(R.id.checkBoxChestMuscles);
+        CheckBox checkBoxAbdominalMuscles = findViewById(R.id.checkBoxAbdominalMuscles);
+        CheckBox checkBoxArmMuscles = findViewById(R.id.checkBoxArmMuscles);
+        CheckBox checkBoxLegMuscles = findViewById(R.id.checkBoxLegMuscles);
 
 
 
@@ -60,13 +69,6 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-
-        //fetch fitness level from the database
-        try (Cursor cursor = dbManager.fetchUser()) {
-            cursor.moveToFirst();
-            fitnessLvl.setText(cursor.getString(6));
         }
 
         btnBack.setOnClickListener((View view) -> {
@@ -127,9 +129,19 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                     sundaySelected = true;
                 }
 
-                //get the Activity Types selected
-
-
+                //determine the activity types selected
+                if (checkBoxChestMuscles.isChecked()) {
+                    chestSelected = true;
+                }
+                if (checkBoxAbdominalMuscles.isChecked()) {
+                    abdominalSelected = true;
+                }
+                if (checkBoxArmMuscles.isChecked()) {
+                    armSelected = true;
+                }
+                if (checkBoxLegMuscles.isChecked()) {
+                    legSelected = true;
+                }
 
 
                 Date c = Calendar.getInstance().getTime();
@@ -138,7 +150,8 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                 String currentDate = df.format(c);
 
                 //insert in the database
-                dbManager.insertPlan(currentDate, lengthOfPlan, mondaySelected, tuesdaySelected, wednesdaySelected, thursdaySelected, fridaySelected, saturdaySelected, sundaySelected);
+                dbManager.insertPlan(currentDate, lengthOfPlan, mondaySelected, tuesdaySelected, wednesdaySelected, thursdaySelected, fridaySelected, saturdaySelected, sundaySelected, chestSelected, abdominalSelected, armSelected, legSelected);
+                Toast.makeText(WorkoutPlanActivity.this, "Workout Plan saved successfully.", Toast.LENGTH_SHORT).show();
 
             }catch (Exception ex) {
                 ex.printStackTrace();
@@ -147,4 +160,13 @@ public class WorkoutPlanActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+
+//    public void selectChestMuscles(View v) {
+//        int countClick = 0;
+//
+//        ImageView typeChestMuscles = findViewById(R.id.imgViewActivity1);
+//        Log.v("WORKOUTPLAN", "chest muscles clicked");
+//        typeChestMuscles.setColorFilter(Color.parseColor("#33FFFFFF"), PorterDuff.Mode.LIGHTEN);
+//    }
 }

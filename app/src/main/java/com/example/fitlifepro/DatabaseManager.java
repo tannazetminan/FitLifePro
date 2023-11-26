@@ -39,7 +39,7 @@ public class DatabaseManager {
         database.insert(DatabaseHelper.USER_DATABASE_TABLE, null, contentValues);
     }
 
-    public void insertPlan (String start_date, int length_of_plan, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday) {
+    public void insertPlan (String start_date, int length_of_plan, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday, Boolean chest_activity, boolean abdominal_activity, boolean arm_activity, boolean leg_activity) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.START_DATE, start_date);
         contentValues.put(DatabaseHelper.LENGTH_OF_PLAN, length_of_plan);
@@ -50,12 +50,16 @@ public class DatabaseManager {
         contentValues.put(DatabaseHelper.FRIDAY, friday);
         contentValues.put(DatabaseHelper.SATURDAY, saturday);
         contentValues.put(DatabaseHelper.SUNDAY, sunday);
+        contentValues.put(DatabaseHelper.CHEST_ACTIVITY, chest_activity);
+        contentValues.put(DatabaseHelper.ABDOMINAL_ACTIVITY, abdominal_activity);
+        contentValues.put(DatabaseHelper.ARM_ACTIVITY, arm_activity);
+        contentValues.put(DatabaseHelper.LEG_ACTIVITY, leg_activity);
 
         database.insert(DatabaseHelper.WP_DATABASE_TABLE, null, contentValues);
     }
 
     public Cursor fetchUser() {
-        String [] columns = new String[] {DatabaseHelper.USER_EMAIL, DatabaseHelper.USER_NAME, DatabaseHelper.BIRTHDAY, DatabaseHelper.WEIGHT, DatabaseHelper.HEIGHT, DatabaseHelper.GENDER, DatabaseHelper.FITNESS_LEVEL};
+        String [] columns = new String[] {DatabaseHelper.USER_EMAIL, DatabaseHelper.USER_NAME, DatabaseHelper.BIRTHDAY, DatabaseHelper.HEIGHT, DatabaseHelper.WEIGHT, DatabaseHelper.GENDER, DatabaseHelper.FITNESS_LEVEL};
         Cursor cursor = database.query(DatabaseHelper.USER_DATABASE_TABLE, columns, null,null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -68,7 +72,10 @@ public class DatabaseManager {
                 DatabaseHelper.LENGTH_OF_PLAN, DatabaseHelper.MONDAY,
                 DatabaseHelper.TUESDAY, DatabaseHelper.WEDNESDAY,
                 DatabaseHelper.THURSDAY, DatabaseHelper.FRIDAY,
-                DatabaseHelper.SATURDAY, DatabaseHelper.SUNDAY};
+                DatabaseHelper.SATURDAY, DatabaseHelper.SUNDAY,
+                DatabaseHelper.CHEST_ACTIVITY, DatabaseHelper.ABDOMINAL_ACTIVITY,
+                DatabaseHelper.ARM_ACTIVITY, DatabaseHelper.LEG_ACTIVITY
+        };
         Cursor cursor = database.query(DatabaseHelper.WP_DATABASE_TABLE, columns, null,null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();

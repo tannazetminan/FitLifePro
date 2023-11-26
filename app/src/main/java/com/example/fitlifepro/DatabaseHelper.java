@@ -34,6 +34,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String SUNDAY = "sunday";
     public static final String START_DATE = "start_date";
     public static final String LENGTH_OF_PLAN = "length_of_plan";
+    public static final String CHEST_ACTIVITY = "chest_activity";
+    public static final String ABDOMINAL_ACTIVITY = "abdominal_activity";
+    public static final String ARM_ACTIVITY = "arm_activity";
+    public static final String LEG_ACTIVITY = "leg_activity";
 
     private static final String CREATE_USERTABLE_QUERY = "CREATE TABLE " + USER_DATABASE_TABLE + " ( " +
             USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -55,7 +59,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             THURSDAY + " BOOLEAN NOT NULL, " +
             FRIDAY + " BOOLEAN NOT NULL, " +
             SATURDAY + " BOOLEAN NOT NULL, " +
-            SUNDAY + " BOOLEAN NOT NULL);";
+            SUNDAY + " BOOLEAN NOT NULL, " +
+            CHEST_ACTIVITY + " BOOLEAN NOT NULL, " +
+            ABDOMINAL_ACTIVITY + " BOOLEAN NOT NULL, " +
+            ARM_ACTIVITY + " BOOLEAN NOT NULL, " +
+            LEG_ACTIVITY + " BOOLEAN NOT NULL);";
 
     public DatabaseHelper(@Nullable Context context) {
 

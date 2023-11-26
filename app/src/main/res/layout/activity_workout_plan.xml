@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999"
+        app:layout_constraintVertical_bias="0.15"
         app:srcCompat="@drawable/banner_background" />
 
     <LinearLayout
@@ -80,11 +80,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:width="48dp"
-            android:backgroundTint="@color/white"
-            android:buttonTint="@color/white"
             android:text="M"
-            android:textColor="@color/white"
-            android:textColorLink="@color/white" />
+            android:textColor="@color/black"
+            android:textColorLink="@color/white"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxTuesday"
@@ -93,7 +92,8 @@
             android:layout_weight="1"
             android:width="48dp"
             android:text="T"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxWednesday"
@@ -102,7 +102,8 @@
             android:layout_weight="1"
             android:width="48dp"
             android:text="W"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxThursday"
@@ -110,7 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="T"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxFriday"
@@ -118,7 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="F"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxSaturday"
@@ -126,7 +129,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="S"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
         <CheckBox
             android:id="@+id/checkBoxSunday"
@@ -134,7 +138,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="S"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:buttonTint="@color/black" />
 
     </LinearLayout>
 
@@ -144,7 +149,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:text="@string/txtLengthOfPlan"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +162,7 @@
         android:id="@+id/spinnerLengthOfPlan"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black"
         android:entries="@array/lengthOfPlan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,109 +187,86 @@
         app:layout_constraintTop_toBottomOf="@+id/imgViewBanner"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/txtViewDifficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+
+    <LinearLayout
+        android:id="@+id/linearLayoutActivityTypes"
+        android:layout_width="375dp"
+        android:layout_height="400dp"
         android:layout_marginTop="5dp"
-        android:text="@string/txtDifficulty"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStartWorkout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewActivityType"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/txtViewPlanFitnessLvl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:text="@string/txtFitnessLvl"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtViewDifficulty"
-        app:layout_constraintVertical_bias="0.041" />
-
-    <GridLayout
-        android:id="@+id/gridActivityType"
-        android:layout_width="350dp"
-        android:layout_height="400dp"
-        android:layout_margin="10sp"
-        android:columnCount="1"
-        android:rowCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewBanner"
-        app:layout_constraintVertical_bias="0.19">
-
-
-        <ImageView
-            android:id="@+id/imgViewActivity1"
-            android:layout_width="70sp"
-            android:layout_height="60dp"
-            android:layout_rowWeight="0.25"
-            android:layout_columnWeight="1"
+        <CheckBox
+            android:id="@+id/checkBoxChestMuscles"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
-            android:layout_margin="0sp"
-            android:scrollbarSize="4dp"
-            app:srcCompat="@drawable/banner_chest_muscles" />
+            android:layout_margin="10sp"
+            android:backgroundTint="@color/black"
+            android:drawableRight="@drawable/banner_chest_muscles"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:textSize="0sp"
+            app:buttonTint="@color/black" />
 
-        <ImageView
-            android:id="@+id/imgViewActivity2"
-            android:layout_width="80sp"
-            android:layout_height="60dp"
-            android:layout_rowWeight="0.25"
-            android:layout_columnWeight="1"
+        <CheckBox
+            android:id="@+id/checkBoxAbdominalMuscles"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
-            android:layout_margin="0sp"
-            app:srcCompat="@drawable/banner_abdominal_muscles" />
+            android:layout_margin="10sp"
+            android:backgroundTint="@color/black"
+            android:drawableRight="@drawable/banner_abdominal_muscles"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:textSize="0sp"
+            app:buttonTint="@color/black" />
 
-        <ImageView
-            android:id="@+id/imgViewActivity3"
-            android:layout_width="80sp"
-            android:layout_height="60dp"
-            android:layout_rowWeight="0.25"
-            android:layout_columnWeight="1"
+        <CheckBox
+            android:id="@+id/checkBoxArmMuscles"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
-            android:layout_margin="0sp"
-            app:srcCompat="@drawable/banner_arm_muscles" />
+            android:layout_margin="10sp"
+            android:backgroundTint="@color/black"
+            android:drawableRight="@drawable/banner_arm_muscles"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:textSize="0sp"
+            app:buttonTint="@color/black" />
 
-        <ImageView
-            android:id="@+id/imgViewActivity4"
-            android:layout_width="80sp"
-            android:layout_height="60dp"
-            android:layout_rowWeight="0.25"
-            android:layout_columnWeight="1"
+        <CheckBox
+            android:id="@+id/checkBoxLegMuscles"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
-            android:layout_margin="0sp"
-            app:srcCompat="@drawable/banner_leg_muscles" />
-
-    </GridLayout>
+            android:layout_margin="10sp"
+            android:backgroundTint="@color/black"
+            android:drawableRight="@drawable/banner_leg_muscles"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:textSize="0sp"
+            app:buttonTint="@color/black" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnStartWorkout"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="30dp"
         android:backgroundTint="#D05B28"
         android:text="@string/txtStartWorkout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridActivityType"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutActivityTypes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
