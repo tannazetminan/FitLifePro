@@ -21,8 +21,8 @@ public class ReminderHelper extends SQLiteOpenHelper
 
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " +
             TABLE_NAME + "(" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            COLUMN_DATE + "TEXT," +
-            COLUMN_MEMO + "TEXT)";
+            COLUMN_DATE + " TEXT," +
+            COLUMN_MEMO + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME;
 

@@ -26,12 +26,13 @@ public class ReminderViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder_view);
 
+        helper = new ReminderHelper(ReminderViewActivity.this);
+
         txtViewRemView = findViewById(R.id.txtViewRemView);
 
         btnRemViewBack = findViewById(R.id.btnRemViewBack);
         btnRemViewDelete = findViewById(R.id.btnRemViewDelete);
 
-        helper = new ReminderHelper(ReminderViewActivity.this);
         reminderList = helper.loadReminders();
 
         ReminderAdapter myAdapter = new ReminderAdapter(reminderList, -1);
