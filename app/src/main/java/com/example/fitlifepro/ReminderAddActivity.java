@@ -17,6 +17,7 @@ public class ReminderAddActivity extends AppCompatActivity {
 
     Button btnRemAddBack;
     Button btnRemSave;
+    Button btnRemViewAll;
 
     CalendarView calendarView;
     Calendar calendar;
@@ -33,6 +34,7 @@ public class ReminderAddActivity extends AppCompatActivity {
 
         btnRemAddBack = findViewById(R.id.btnRemAddBack);
         btnRemSave  = findViewById(R.id.btnRemSave);
+        btnRemViewAll = findViewById(R.id.btnRemViewAll);
 
         calendarView = findViewById(R.id.calendarView);
         calendar = Calendar.getInstance();
@@ -45,6 +47,10 @@ public class ReminderAddActivity extends AppCompatActivity {
 
         btnRemAddBack.setOnClickListener((View view) -> {
             startActivity(new Intent(ReminderAddActivity.this, HomePageActivity.class));
+        });
+
+        btnRemViewAll.setOnClickListener((View view) -> {
+            startActivity(new Intent(ReminderAddActivity.this, ReminderViewActivity.class));
         });
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

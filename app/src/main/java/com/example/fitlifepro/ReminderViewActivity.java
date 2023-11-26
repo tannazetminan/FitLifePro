@@ -15,6 +15,7 @@ public class ReminderViewActivity extends AppCompatActivity {
 
     TextView txtViewRemView;
     Button btnRemViewBack;
+    Button btnRemViewAdd;
     Button btnRemViewDelete;
     ListView listViewReminders;
     List<Reminder> reminderList = new ArrayList<>();
@@ -31,6 +32,7 @@ public class ReminderViewActivity extends AppCompatActivity {
         txtViewRemView = findViewById(R.id.txtViewRemView);
 
         btnRemViewBack = findViewById(R.id.btnRemViewBack);
+        btnRemViewAdd = findViewById(R.id.btnRemViewAdd);
         btnRemViewDelete = findViewById(R.id.btnRemViewDelete);
 
         reminderList = helper.loadReminders();
@@ -47,6 +49,10 @@ public class ReminderViewActivity extends AppCompatActivity {
         });
 
         btnRemViewBack.setOnClickListener((View view) -> {
+            startActivity(new Intent(ReminderViewActivity.this, HomePageActivity.class));
+        });
+
+        btnRemViewAdd.setOnClickListener((View view) -> {
             startActivity(new Intent(ReminderViewActivity.this, ReminderAddActivity.class));
         });
 
