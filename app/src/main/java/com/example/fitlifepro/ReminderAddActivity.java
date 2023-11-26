@@ -71,21 +71,21 @@ public class ReminderAddActivity extends AppCompatActivity {
             helper.insertDate(myDate, myMemo);
 
             // Displaying Toast
-            // Toast.makeText(ReminderAddActivity.this, "Successfully added", Toast.LENGTH_SHORT).show();
+             Toast.makeText(ReminderAddActivity.this, "Successfully added", Toast.LENGTH_SHORT).show();
 
             // Creating Snackbar
-            snackbar = Snackbar.make(view, R.string.snackBarRem, Snackbar.LENGTH_SHORT);
-            snackbar.setDuration(10000);
-            snackbar.setTextColor(Color.WHITE);
-            snackbar.setActionTextColor(Color.WHITE);
-            snackbar.setBackgroundTint(Color.rgb(255,155,112));
-            snackbar.setAction(R.string.snackBarAct, new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(ReminderAddActivity.this, ReminderViewActivity.class));
-                }
-            });
-            snackbar.show();
+//            snackbar = Snackbar.make(view, R.string.snackBarRem, Snackbar.LENGTH_SHORT);
+//            snackbar.setDuration(10000);
+//            snackbar.setTextColor(Color.WHITE);
+//            snackbar.setActionTextColor(Color.WHITE);
+//            snackbar.setBackgroundTint(Color.rgb(255,155,112));
+//            snackbar.setAction(R.string.snackBarAct, new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    startActivity(new Intent(ReminderAddActivity.this, ReminderViewActivity.class));
+//                }
+//            });
+//            snackbar.show();
         });
     }
 
