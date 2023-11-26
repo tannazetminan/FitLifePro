@@ -1,16 +1,14 @@
 package com.example.fitlifepro;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -25,8 +23,6 @@ public class ReminderAddActivity extends AppCompatActivity {
     int selected_year, selected_month, selected_day;
 
     EditText editTextMemo;
-
-    Snackbar snackbar;
 
     private ReminderHelper helper;
 
@@ -72,20 +68,7 @@ public class ReminderAddActivity extends AppCompatActivity {
 
             // Displaying Toast
              Toast.makeText(ReminderAddActivity.this, "Successfully added", Toast.LENGTH_SHORT).show();
-
-            // Creating Snackbar
-//            snackbar = Snackbar.make(view, R.string.snackBarRem, Snackbar.LENGTH_SHORT);
-//            snackbar.setDuration(10000);
-//            snackbar.setTextColor(Color.WHITE);
-//            snackbar.setActionTextColor(Color.WHITE);
-//            snackbar.setBackgroundTint(Color.rgb(255,155,112));
-//            snackbar.setAction(R.string.snackBarAct, new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    startActivity(new Intent(ReminderAddActivity.this, ReminderViewActivity.class));
-//                }
-//            });
-//            snackbar.show();
+             startActivity(new Intent(ReminderAddActivity.this, ReminderViewActivity.class));
         });
     }
 
