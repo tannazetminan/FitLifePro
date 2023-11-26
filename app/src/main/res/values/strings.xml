@@ -50,7 +50,7 @@
     <string name="txtViewRemAdd">Setting a date and a reminder</string>
     <string name="txtViewRemView">Checking reminders</string>
     <string name="txtViewRemViewSelected">Memo selected: </string>
-    <string name="btnRemViewBack">Add new</string>
+    <string name="btnRemViewBack">Back</string>
     <string name="btnRemViewDelete">Delete</string>
     <string name="txtViewRemMemo">reminder memo</string>
     <string name="txtViewRemDate">reminder date</string>
@@ -60,6 +60,8 @@
     <string name="btnExDemosRem">Reminders</string>
     <string name="btnNutGuideBack">Back</string>
     <string name="btnNutGuideRem">Reminders</string>
+    <string name="btnRemViewAll">View All</string>
+    <string name="btnRemViewAdd">Add New</string>
     <string-array name="lengthOfPlan">
         <item>2 Weeks</item>
         <item>3 Weeks</item>

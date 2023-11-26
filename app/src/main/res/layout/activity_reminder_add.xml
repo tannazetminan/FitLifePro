@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemAddBack"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
@@ -43,7 +43,17 @@
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemSave"
-            android:textSize="25sp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRemViewAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/btnRemViewAll"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
