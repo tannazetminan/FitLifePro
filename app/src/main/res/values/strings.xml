@@ -35,7 +35,7 @@
     <string name="txtViewExDemos"><![CDATA[Health & Exercises]]></string>
     <string name="txtUpdate">Update</string>
     <string name="txtDeleteAccount"><u>Permanently delete my account</u></string>
-    <string name="txtFitnessLvl">Fitness Level</string>
+    <string name="txtFitnessLvl">Fitness Level: </string>
     <string name="txtUpdatePersonalDetails">Update Personal Details</string>
     <string name="txtSaveChanges">Save Changes</string>
     <string name="txtBuildYourPlan">Build Your Plan</string>
@@ -62,13 +62,12 @@
     <string name="btnNutGuideRem">Reminders</string>
     <string name="btnRemViewAll">View All</string>
     <string name="btnRemViewAdd">Add New</string>
+    <string name="txtProgressTracker">Progress Tracker</string>
+    <string name="txtDaysLeft">X Days Left</string>
+    <string name="txtDay">Day X</string>
     <string-array name="lengthOfPlan">
         <item>2 Weeks</item>
         <item>3 Weeks</item>
         <item>4 Weeks</item>
-        <item>5 Weeks</item>
-        <item>6 Weeks</item>
-        <item>7 Weeks</item>
-        <item>8 Weeks</item>
     </string-array>
 </resources>

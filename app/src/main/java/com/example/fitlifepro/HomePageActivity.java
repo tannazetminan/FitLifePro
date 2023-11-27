@@ -74,5 +74,10 @@ public class HomePageActivity extends AppCompatActivity {
         Intent intent = new Intent(HomePageActivity.this, GymFinderActivity.class);
         startActivity(intent);
     }
+
+    public void ProgressTrackerPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, ProgressTrackerActivity.class);
+        startActivity(intent);
+    }
 }
 
