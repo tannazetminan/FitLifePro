@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FitLifePro"
         tools:targetApi="31">
         <activity
+            android:name=".ExerciseDayActivity"
+            android:exported="false" />
+        <activity
             android:name=".RestDayActivity"
             android:exported="false" />
         <activity
