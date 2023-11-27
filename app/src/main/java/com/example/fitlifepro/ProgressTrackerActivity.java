@@ -62,7 +62,7 @@ public class ProgressTrackerActivity extends AppCompatActivity {
 
             DaysList = new ArrayList<>(); //empty list
 
-            LoadLvlData();
+            LoadDaysData();
 
             //Instantiate ListView
             ListView listViewDays = findViewById(R.id.listViewDays);
@@ -82,7 +82,7 @@ public class ProgressTrackerActivity extends AppCompatActivity {
         }
     }
 
-    private void LoadLvlData() {
+    private void LoadDaysData() {
         for (int i = 0; i < ProgressTrackerDays.size(); i++) {
             ProgressTrackerDays eachDay =
                     new ProgressTrackerDays(ProgressTrackerDays.get(i));

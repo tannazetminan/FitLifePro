@@ -153,6 +153,54 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                 dbManager.insertPlan(currentDate, lengthOfPlan, mondaySelected, tuesdaySelected, wednesdaySelected, thursdaySelected, fridaySelected, saturdaySelected, sundaySelected, chestSelected, abdominalSelected, armSelected, legSelected);
                 Toast.makeText(WorkoutPlanActivity.this, "Workout Plan saved successfully.", Toast.LENGTH_SHORT).show();
 
+                //add plan to days_tracker table
+                //for the current design, max length of plan that can be selected is 4 weeks or 28 days
+                SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+                Date d = df.parse(currentDate);
+                String dayOfTheWeek = sdf.format(d);
+
+                String activity = null;
+                String previousDay = null;
+
+                int i;
+                for (i = 1; i <= 28; i++) {
+                    if (i == 1) {
+                        activity = getActivity(dayOfTheWeek);
+                        dbManager.insertDay(dayOfTheWeek, activity);
+                        previousDay = dayOfTheWeek;
+                    } else {
+                        if (previousDay.equals("Monday")) {
+                            activity = getActivity("Tuesday");
+                            dbManager.insertDay("Tuesday", activity);
+                            previousDay = "Tuesday";
+                        } else if (previousDay.equals("Tuesday")) {
+                            activity = getActivity("Wednesday");
+                            dbManager.insertDay("Wednesday", activity);
+                            previousDay = "Wednesday";
+                        } else if (previousDay.equals("Wednesday")) {
+                            activity = getActivity("Thursday");
+                            dbManager.insertDay("Thursday", activity);
+                            previousDay = "Thursday";
+                        } else if (previousDay.equals("Thursday")) {
+                            activity = getActivity("Friday");
+                            dbManager.insertDay("Friday", activity);
+                            previousDay = "Friday";
+                        } else if (previousDay.equals("Friday")) {
+                            activity = getActivity("Saturday");
+                            dbManager.insertDay("Saturday", activity);
+                            previousDay = "Saturday";
+                        } else if (previousDay.equals("Saturday")) {
+                            activity = getActivity("Sunday");
+                            dbManager.insertDay("Sunday", activity);
+                            previousDay = "Sunday";
+                        } else {
+                            activity = getActivity("Monday");
+                            dbManager.insertDay("Monday", activity);
+                            previousDay = "Monday";
+                        }
+                    }
+                };
+
             }catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -162,11 +210,46 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     }
 
 
-//    public void selectChestMuscles(View v) {
-//        int countClick = 0;
-//
-//        ImageView typeChestMuscles = findViewById(R.id.imgViewActivity1);
-//        Log.v("WORKOUTPLAN", "chest muscles clicked");
-//        typeChestMuscles.setColorFilter(Color.parseColor("#33FFFFFF"), PorterDuff.Mode.LIGHTEN);
-//    }
+    public String getActivity(String day_of_week) {
+        String activity = null;
+
+        String mon;
+        String tue;
+        String wed;
+        String thu;
+        String fri;
+        String sat;
+        String sun;
+
+        //get days of workout from Workout_Plan table
+        try (Cursor cursor = dbManager.fetchPlan()) {
+            cursor.moveToFirst();
+
+            mon = cursor.getString(2);
+            tue = cursor.getString(3);
+            wed = cursor.getString(4);
+            thu = cursor.getString(5);
+            fri = cursor.getString(6);
+            sat = cursor.getString(7);
+            sun = cursor.getString(8);
+        }
+
+        if (day_of_week.equals("Monday")) {
+            activity = mon;
+        } else if (day_of_week.equals("Tuesday")) {
+            activity = tue;
+        } else if (day_of_week.equals("Wednesday")) {
+            activity = wed;
+        } else if (day_of_week.equals("Thursday")) {
+            activity = thu;
+        } else if (day_of_week.equals("Friday")) {
+            activity = fri;
+        } else if (day_of_week.equals("Saturday")) {
+            activity = sat;
+        } else {
+            activity = sun;
+        }
+
+        return activity;
+    }
 }

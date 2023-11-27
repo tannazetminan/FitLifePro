@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TransferQueue;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "FITLIFEPRO.DB";
@@ -39,6 +40,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ARM_ACTIVITY = "arm_activity";
     public static final String LEG_ACTIVITY = "leg_activity";
 
+    //variables for progress tracker database
+    public static final String TRACKER_DATABASE_TABLE = "DAYS_TRACKER";
+
+    public static final String DAY_ACTIVITY = "day_activity";
+    public static final String DAY_OF_WEEK = "day_of_week";
+    public static final String DAY_ID = "day_id";
+
     private static final String CREATE_USERTABLE_QUERY = "CREATE TABLE " + USER_DATABASE_TABLE + " ( " +
             USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             USER_EMAIL + " TEXT NOT NULL, " +
@@ -65,6 +73,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ARM_ACTIVITY + " BOOLEAN NOT NULL, " +
             LEG_ACTIVITY + " BOOLEAN NOT NULL);";
 
+    private static final String CREATE_TRACKER_QUERY = "CREATE TABLE " + TRACKER_DATABASE_TABLE + " ( " +
+            DAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            DAY_OF_WEEK + " TEXT NOT NULL, " +
+            DAY_ACTIVITY + " TEXT NOT NULL);";
+
     public DatabaseHelper(@Nullable Context context) {
 
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -74,6 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             db.execSQL(CREATE_USERTABLE_QUERY);
             db.execSQL(CREATE_WPDB_QUERY);
+            db.execSQL(CREATE_TRACKER_QUERY);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -82,5 +96,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + USER_DATABASE_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + WP_DATABASE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + TRACKER_DATABASE_TABLE);
     }
 }

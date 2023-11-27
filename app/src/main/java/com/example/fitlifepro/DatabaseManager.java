@@ -58,6 +58,14 @@ public class DatabaseManager {
         database.insert(DatabaseHelper.WP_DATABASE_TABLE, null, contentValues);
     }
 
+    public void insertDay (String day_of_week, String day_activity) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.DAY_OF_WEEK, day_of_week);
+        contentValues.put(DatabaseHelper.DAY_ACTIVITY, day_activity);
+
+        database.insert(DatabaseHelper.TRACKER_DATABASE_TABLE, null, contentValues);
+    }
+
     public Cursor fetchUser() {
         String [] columns = new String[] {DatabaseHelper.USER_EMAIL, DatabaseHelper.USER_NAME, DatabaseHelper.BIRTHDAY, DatabaseHelper.HEIGHT, DatabaseHelper.WEIGHT, DatabaseHelper.GENDER, DatabaseHelper.FITNESS_LEVEL};
         Cursor cursor = database.query(DatabaseHelper.USER_DATABASE_TABLE, columns, null,null, null, null, null);
@@ -80,6 +88,12 @@ public class DatabaseManager {
         if (cursor != null) {
             cursor.moveToFirst();
         }
+        return cursor;
+    }
+
+    public Cursor fetchTracker(String day_id) {
+        String [] columns = new String[] {DatabaseHelper.DAY_OF_WEEK, DatabaseHelper.DAY_ACTIVITY};
+        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TRACKER_DATABASE_TABLE + " WHERE " + DatabaseHelper.DAY_ID + " = ?", new String[]{day_id});
         return cursor;
     }
 
