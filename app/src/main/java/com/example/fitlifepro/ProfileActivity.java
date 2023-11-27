@@ -56,12 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
             profileWeight.setText(cursor.getString(4));
             profileGender.setText(cursor.getString(5));
             profileFitnessLvl.setText(cursor.getString(6));
-
-//            if (cursor.getString(6).equals("Male")) {
-//                profileAvatar.setImageResource(R.drawable.male_avatar);
-//            } else {
-//                profileAvatar.setImageResource(R.drawable.female_avatar);
-//            }
         }
 
         btnBack.setOnClickListener((View view) -> {

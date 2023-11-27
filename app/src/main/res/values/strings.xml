@@ -65,6 +65,9 @@
     <string name="txtProgressTracker">Progress Tracker</string>
     <string name="txtDaysLeft">X Days Left</string>
     <string name="txtDay">Day X</string>
+    <string name="txtRestDay_1">No exercises today,</string>
+    <string name="txtRestDay_2">you need to take some REST.</string>
+    <string name="txtDone">Done</string>
     <string-array name="lengthOfPlan">
         <item>2 Weeks</item>
         <item>3 Weeks</item>
