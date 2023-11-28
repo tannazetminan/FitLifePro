@@ -116,6 +116,16 @@ public class DatabaseManager {
         return ret;
     }
 
+    public int updatePlan(String done_days) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.DONE_DAYS, done_days);
+
+        String whereClause = DatabaseHelper.PLAN_ID + "= 1";
+
+        int ret = database.update(DatabaseHelper.WP_DATABASE_TABLE, contentValues, whereClause, null);
+        return ret;
+    }
+
     public void deleteUser() {
         database.delete(DatabaseHelper.USER_DATABASE_TABLE, null, null);
     }

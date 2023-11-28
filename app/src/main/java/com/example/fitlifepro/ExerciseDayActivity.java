@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ExerciseDayActivity extends AppCompatActivity {
 
@@ -62,9 +63,12 @@ public class ExerciseDayActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        int doneDays = 0;
+
         //get selected activity types from the database
         try (Cursor cursor = dbManager.fetchPlan()) {
             cursor.moveToFirst();
+            doneDays = Integer.parseInt(cursor.getString(14));
             if (cursor.getString(9).equals("1")) {
                 chestActivity = true;
                 totalActivities = totalActivities + 2;
@@ -166,9 +170,13 @@ public class ExerciseDayActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        AtomicInteger setDays = new AtomicInteger(doneDays);
+
         btnDone.setOnClickListener((View view) -> {
             Intent intent = new Intent(ExerciseDayActivity.this, ProgressTrackerActivity.class);
             startActivity(intent);
+            setDays.getAndIncrement();
+            dbManager.updatePlan(String.valueOf(setDays));
         });
 
     }

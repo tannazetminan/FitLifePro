@@ -10,7 +10,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +33,8 @@ public class ProgressTrackerActivity extends AppCompatActivity {
         TextView txtViewFitnessLvlValue = findViewById(R.id.txtViewFitnessLvlValue);
         ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         TextView txtViewDaysLeft = findViewById(R.id.txtViewDaysLeft);
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        TextView txtViewPercentage = findViewById(R.id.txtViewPercentage);
 
         //initialize the Database Manager
         dbManager = new DatabaseManager(this);
@@ -80,7 +85,11 @@ public class ProgressTrackerActivity extends AppCompatActivity {
             //Set adapter object onto ListView
             listViewDays.setAdapter(myAdapter);
 
+            int percentProgress = (doneDays * 100) / totalDays;
+
             txtViewDaysLeft.setText((totalDays-doneDays) + " Days Left");
+            txtViewPercentage.setText(percentProgress + "%");
+            progressBar.setProgress(percentProgress);
 
             //set onItemClick listener for ListView
             listViewDays.setOnItemClickListener((AdapterView<?> adapterView, View view, int x, long l) -> {
