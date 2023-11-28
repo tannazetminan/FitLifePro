@@ -19,7 +19,7 @@ public class ExerciseDayActivity extends AppCompatActivity {
 
     DatabaseManager dbManager;
     List<String> ExerciseName;
-    List<String> Timer;
+    //List<String> Timer;
     List<Integer> ExercisePics;
 
     List<String> FitnessLevel;
@@ -30,7 +30,6 @@ public class ExerciseDayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_day);
 
-        //pass object from SelectFitnessLvlActivity
         Bundle bundle = getIntent().getExtras();
         String dayX = bundle.getString("DAY_X", "NOTHING");
 
@@ -86,72 +85,72 @@ public class ExerciseDayActivity extends AppCompatActivity {
         }
 
         //determine the length of exercise based on fitness level
-        String timer;
-        if (fitnessLvl.equals("Beginner")) {
-            timer = "5:00";
-        } else if (fitnessLvl.equals("Intermediate")) {
-            timer = "10:00";
-        } else {
-            timer = "15:00";
-        }
+//        String timer;
+//        if (fitnessLvl.equals("Beginner")) {
+//            timer = "5:00";
+//        } else if (fitnessLvl.equals("Intermediate")) {
+//            timer = "10:00";
+//        } else {
+//            timer = "15:00";
+//        }
 
         String exerciseArray[] = new String[totalActivities];
         Integer exercisePicsArray[] = new Integer[totalActivities];
-        String exerciseTimerArray[] = new String[totalActivities];
+        //String exerciseTimerArray[] = new String[totalActivities];
         String fitnessLvlArray[] = new String[totalActivities];
         int i = -1;
         if (chestActivity == true) {
             i++;
             exerciseArray[i] = "Push Ups";
             exercisePicsArray[i] = (R.drawable.exercise_pushups);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
             i++;
             exerciseArray[i] = "Incline Push Ups";
             exercisePicsArray[i] = (R.drawable.exercise_inclinepushups);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
         }
         if (abdominalActivity == true) {
             i++;
             exerciseArray[i] = "Plank";
             exercisePicsArray[i] = (R.drawable.exercise_plank);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
             i++;
             exerciseArray[i] = "Alternating Curls";
             exercisePicsArray[i] = (R.drawable.exercise_alternatingcurls);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
         }
         if (armActivity == true) {
             i++;
             exerciseArray[i] = "Arm Raises";
             exercisePicsArray[i] = (R.drawable.exercise_armraises);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
             i++;
             exerciseArray[i] = "Biceps Curl";
             exercisePicsArray[i] = (R.drawable.exercise_bicepscurls);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
         }
         if (legActivity == true) {
             i++;
             exerciseArray[i] = "Squat";
             exercisePicsArray[i] = (R.drawable.exercise_squats);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
             i++;
             exerciseArray[i] = "Backward Lunge";
             exercisePicsArray[i] = (R.drawable.exercise_backwardlunge);
-            exerciseTimerArray[i] = timer;
+            //exerciseTimerArray[i] = timer;
             fitnessLvlArray[i] = fitnessLvl;
         }
 
         ExerciseName = new ArrayList<>(Arrays.asList(exerciseArray));
         ExercisePics = new ArrayList<>(Arrays.asList(exercisePicsArray));
-        Timer = new ArrayList<>(Arrays.asList(exerciseTimerArray));
+        //Timer = new ArrayList<>(Arrays.asList(exerciseTimerArray));
         FitnessLevel = new ArrayList<>(Arrays.asList(fitnessLvlArray));
         ExerciseList = new ArrayList<>(); //empty list
 
@@ -181,7 +180,7 @@ public class ExerciseDayActivity extends AppCompatActivity {
     private void LoadDailyExerciseData() {
         for (int i = 0; i < ExerciseName.size();i++){
             ExerciseDay eachExercise =
-                    new ExerciseDay(ExerciseName.get(i),Timer.get(i),ExercisePics.get(i), FitnessLevel.get(i));
+                    new ExerciseDay(ExerciseName.get(i),ExercisePics.get(i), FitnessLevel.get(i));
             ExerciseList.add(eachExercise); //SongList is not null
         }
     }

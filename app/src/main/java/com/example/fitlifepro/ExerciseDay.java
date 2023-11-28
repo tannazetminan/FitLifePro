@@ -3,7 +3,7 @@ package com.example.fitlifepro;
 public class ExerciseDay {
 
     private String ExerciseName;
-    private String Timer;
+    //private String Timer;
     private int ExercisePic;
     private String FitnessLvl;
 
@@ -15,13 +15,13 @@ public class ExerciseDay {
         ExerciseName = exerciseName;
     }
 
-    public String getTimer() {
-        return Timer;
-    }
-
-    public void setTimer(String timer) {
-        Timer = timer;
-    }
+//    public String getTimer() {
+//        return Timer;
+//    }
+//
+//    public void setTimer(String timer) {
+//        Timer = timer;
+//    }
 
     public int getExercisePic() {
         return ExercisePic;
@@ -39,9 +39,9 @@ public class ExerciseDay {
         FitnessLvl = fitnessLvl;
     }
 
-    public ExerciseDay(String exerciseName, String timer, int exercisePic, String fitnessLvl) {
+    public ExerciseDay(String exerciseName, int exercisePic, String fitnessLvl) {
         ExerciseName = exerciseName;
-        Timer = timer;
+        //Timer = timer;
         ExercisePic = exercisePic;
         FitnessLvl = fitnessLvl;
     }

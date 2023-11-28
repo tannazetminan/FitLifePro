@@ -71,12 +71,12 @@ public class ExerciseDayAdapter extends BaseAdapter {
         //populate dynamic variables
         TextView txtExerciseName = view.findViewById(R.id.txtViewExerciseName);
         TextView txtFitnessLvl = view.findViewById(R.id.txtViewExerciseLvl);
-        TextView txtCountdown = view.findViewById(R.id.txtViewCountdown);
+        //TextView txtCountdown = view.findViewById(R.id.txtViewCountdown);
         ImageView imgExercise = view.findViewById(R.id.imgViewExercise);
 
         txtExerciseName.setText(adapterExerciseDay.get(i).getExerciseName());
         txtFitnessLvl.setText(adapterExerciseDay.get(i).getFitnessLvl());
-        txtCountdown.setText(adapterExerciseDay.get(i).getTimer());
+        //txtCountdown.setText(adapterExerciseDay.get(i).getTimer());
         imgExercise.setImageResource(adapterExerciseDay.get(i).getExercisePic());
 
         return view;
