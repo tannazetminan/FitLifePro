@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         TextView btnDeleteAccount = findViewById(R.id.txtViewDeleteAccount);
         //ImageView profileAvatar = findViewById(R.id.imgViewProfilePageAvatar);
         TextView profileName = findViewById(R.id.txtViewDisplayName);

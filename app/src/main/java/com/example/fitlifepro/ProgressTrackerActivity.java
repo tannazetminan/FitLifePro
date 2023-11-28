@@ -8,11 +8,9 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +28,7 @@ public class ProgressTrackerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_progress_tracker);
 
         TextView txtViewFitnessLvlValue = findViewById(R.id.txtViewFitnessLvlValue);
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
 
         //initialize the Database Manager
         dbManager = new DatabaseManager(this);

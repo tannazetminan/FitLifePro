@@ -22,7 +22,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_calculator);
 
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         txtViewBMIResult = findViewById(R.id.txtViewBMIResult);
         txtViewBMIValue = findViewById(R.id.txtViewBMIValue);
 

@@ -21,7 +21,7 @@ public class RestDayActivity extends AppCompatActivity {
         String dayX = bundle.getString("DAY_X", "NOTHING");
 
         TextView txtDayX = findViewById(R.id.txtViewDayX);
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         Button btnDone = findViewById(R.id.btnDone);
 
         txtDayX.setText(dayX);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -40,7 +41,7 @@ public class ExerciseDayActivity extends AppCompatActivity {
         boolean legActivity = false;
         int totalActivities = 0;
 
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         TextView txtDayX = findViewById(R.id.txtViewDayX);
         Button btnDone = findViewById(R.id.btnDoneExercise);
 
@@ -164,6 +165,23 @@ public class ExerciseDayActivity extends AppCompatActivity {
 
         //Set adapter object onto ListView
         listViewExercises.setAdapter(myAdapter);
+
+        String finalFitnessLvl = fitnessLvl;
+        listViewExercises.setOnItemClickListener((AdapterView<?> adapterView, View view, int x, long l) -> {
+            myAdapter.setSelectedInd(x);
+            int index = myAdapter.getSelectedInd();
+
+            Bundle bundleExercise = new Bundle();
+            bundleExercise.putString("FITNESS_LEVEL", finalFitnessLvl);
+            bundleExercise.putString("EXERCISE_NAME", exerciseArray[index]);
+
+            Intent intent = new Intent(ExerciseDayActivity.this, TimerActivity.class);
+            intent.putExtras(bundleExercise);
+
+            startActivity(intent);
+        });
+
+
 
         btnBack.setOnClickListener((View view) -> {
             Intent intent = new Intent(ExerciseDayActivity.this, ProgressTrackerActivity.class);

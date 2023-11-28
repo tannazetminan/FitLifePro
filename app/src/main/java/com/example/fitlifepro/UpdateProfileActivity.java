@@ -35,7 +35,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         initDatePicker();
 
         Button datePickerButton = findViewById(R.id.datePickerUpdateButton);
-        ImageView btnBack = findViewById(R.id.imgViewArrowBack);
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
         EditText updateName = findViewById(R.id.editTxtUpdateName);
         EditText updateEmail = findViewById(R.id.editTxtUpdateEmail);
         EditText updateWeight = findViewById(R.id.editTxtUpdateWeight);

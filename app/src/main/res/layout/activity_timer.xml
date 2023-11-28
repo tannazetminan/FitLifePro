@@ -7,16 +7,22 @@
     android:background="#192126"
     tools:context=".TimerActivity">
 
-    <ImageView
-        android:id="@+id/imgViewArrowBack"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+    <TextView
+        android:id="@+id/txtViewExerciseActivityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center|center_horizontal"
+        android:text="Plank"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btn_arrow" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imgViewExerciseActivity"
@@ -76,5 +82,18 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewCountdown"
         app:layout_constraintVertical_bias="0.0"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnDoneWorkout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/txtDone"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartStopTimer"
+        app:layout_constraintVertical_bias="0.476" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
