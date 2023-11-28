@@ -27,6 +27,7 @@ public class ProgressTrackerAdapter extends BaseAdapter {
 
     public void setAdapterProgressTrackerDays(List<ProgressTrackerDays> adapterProgressTrackerDays) {
         this.adapterProgressTrackerDays = adapterProgressTrackerDays;
+        notifyDataSetChanged();
     }
 
     public int getSelectedInd() {
@@ -35,6 +36,7 @@ public class ProgressTrackerAdapter extends BaseAdapter {
 
     public void setSelectedInd(int selectedInd) {
         SelectedInd = selectedInd;
+        notifyDataSetChanged();
     }
 
     @Override

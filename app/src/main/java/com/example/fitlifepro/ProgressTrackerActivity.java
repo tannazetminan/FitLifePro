@@ -89,32 +89,22 @@ public class ProgressTrackerActivity extends AppCompatActivity {
                         cursor_day_tracker.moveToFirst();
                         @SuppressLint("Range") String activity = cursor_day_tracker.getString(cursor_day_tracker.getColumnIndex(DatabaseHelper.DAY_ACTIVITY));
                         //Toast.makeText(ProgressTrackerActivity.this, "Activity " + activity, Toast.LENGTH_SHORT).show();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("DAY_X", "Day " + (index + 1));
+                        Intent intent;
                         if (activity.equals("0")) {
-                          Intent intent = new Intent(ProgressTrackerActivity.this, RestDayActivity.class);
-                          startActivity(intent);
+                            intent = new Intent(ProgressTrackerActivity.this, RestDayActivity.class);
                         } else {
-                            Toast.makeText(ProgressTrackerActivity.this, "Activity Day " + x, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(ProgressTrackerActivity.this, "Activity Day " + x, Toast.LENGTH_SHORT).show();
+                            intent = new Intent(ProgressTrackerActivity.this, ExerciseDayActivity.class);
                         }
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                     }
                 }finally {
                     cursor.close();
                 }
             });
-
-
-//            int index = myAdapter.getSelectedInd();
-//            Toast.makeText(ProgressTrackerActivity.this, "Day " + index, Toast.LENGTH_SHORT).show();
-//            Cursor cursor_day_tracker = dbManager.fetchTracker(String.valueOf(index));
-//            String activity = cursor_day_tracker.getString(1);
-//            if (activity.equals("0")) {
-//                Intent intent = new Intent(ProgressTrackerActivity.this, RestDayActivity.class);
-//                startActivity(intent);
-//            }
-
-
-
-
-
 
             btnBack.setOnClickListener((
                     View view) -> {
