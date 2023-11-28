@@ -39,6 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ABDOMINAL_ACTIVITY = "abdominal_activity";
     public static final String ARM_ACTIVITY = "arm_activity";
     public static final String LEG_ACTIVITY = "leg_activity";
+    public static final String TOTAL_DAYS = "total_days";
+    public static final String DONE_DAYS = "done_days";
 
     //variables for progress tracker database
     public static final String TRACKER_DATABASE_TABLE = "DAYS_TRACKER";
@@ -71,7 +73,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             CHEST_ACTIVITY + " BOOLEAN NOT NULL, " +
             ABDOMINAL_ACTIVITY + " BOOLEAN NOT NULL, " +
             ARM_ACTIVITY + " BOOLEAN NOT NULL, " +
-            LEG_ACTIVITY + " BOOLEAN NOT NULL);";
+            LEG_ACTIVITY + " BOOLEAN NOT NULL, " +
+            TOTAL_DAYS + " TEXT NOT NULL, " +
+            DONE_DAYS + " TEXT NOT NULL);";
 
     private static final String CREATE_TRACKER_QUERY = "CREATE TABLE " + TRACKER_DATABASE_TABLE + " ( " +
             DAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

@@ -29,6 +29,7 @@ public class ProgressTrackerActivity extends AppCompatActivity {
 
         TextView txtViewFitnessLvlValue = findViewById(R.id.txtViewFitnessLvlValue);
         ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
+        TextView txtViewDaysLeft = findViewById(R.id.txtViewDaysLeft);
 
         //initialize the Database Manager
         dbManager = new DatabaseManager(this);
@@ -48,12 +49,15 @@ public class ProgressTrackerActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        int totalDays;
+        int doneDays;
+
         //get length of plan from the database
         try (Cursor cursor = dbManager.fetchPlan()) {
             cursor.moveToFirst();
 
-            int lengthOfPlan = Integer.parseInt(cursor.getString(1));
-            int totalDays = lengthOfPlan * 7;
+            totalDays = Integer.parseInt(cursor.getString(13));
+            doneDays = Integer.parseInt(cursor.getString(14));
 
             String daysArray[] = new String[totalDays];
             int i;
@@ -75,6 +79,8 @@ public class ProgressTrackerActivity extends AppCompatActivity {
 
             //Set adapter object onto ListView
             listViewDays.setAdapter(myAdapter);
+
+            txtViewDaysLeft.setText((totalDays-doneDays) + " Days Left");
 
             //set onItemClick listener for ListView
             listViewDays.setOnItemClickListener((AdapterView<?> adapterView, View view, int x, long l) -> {

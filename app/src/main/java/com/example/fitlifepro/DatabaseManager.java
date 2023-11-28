@@ -39,7 +39,7 @@ public class DatabaseManager {
         database.insert(DatabaseHelper.USER_DATABASE_TABLE, null, contentValues);
     }
 
-    public void insertPlan (String start_date, int length_of_plan, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday, Boolean chest_activity, boolean abdominal_activity, boolean arm_activity, boolean leg_activity) {
+    public void insertPlan (String start_date, int length_of_plan, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday, Boolean chest_activity, boolean abdominal_activity, boolean arm_activity, boolean leg_activity, int total_days, int done_days) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.START_DATE, start_date);
         contentValues.put(DatabaseHelper.LENGTH_OF_PLAN, length_of_plan);
@@ -54,6 +54,8 @@ public class DatabaseManager {
         contentValues.put(DatabaseHelper.ABDOMINAL_ACTIVITY, abdominal_activity);
         contentValues.put(DatabaseHelper.ARM_ACTIVITY, arm_activity);
         contentValues.put(DatabaseHelper.LEG_ACTIVITY, leg_activity);
+        contentValues.put(DatabaseHelper.TOTAL_DAYS, total_days);
+        contentValues.put(DatabaseHelper.DONE_DAYS, done_days);
 
         database.insert(DatabaseHelper.WP_DATABASE_TABLE, null, contentValues);
     }
@@ -82,7 +84,8 @@ public class DatabaseManager {
                 DatabaseHelper.THURSDAY, DatabaseHelper.FRIDAY,
                 DatabaseHelper.SATURDAY, DatabaseHelper.SUNDAY,
                 DatabaseHelper.CHEST_ACTIVITY, DatabaseHelper.ABDOMINAL_ACTIVITY,
-                DatabaseHelper.ARM_ACTIVITY, DatabaseHelper.LEG_ACTIVITY
+                DatabaseHelper.ARM_ACTIVITY, DatabaseHelper.LEG_ACTIVITY,
+                DatabaseHelper.TOTAL_DAYS, DatabaseHelper.DONE_DAYS
         };
         Cursor cursor = database.query(DatabaseHelper.WP_DATABASE_TABLE, columns, null,null, null, null, null);
         if (cursor != null) {
