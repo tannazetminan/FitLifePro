@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:shadowColor="@color/orange"
         android:text="@string/txtViewNutWebView"
         android:textColor="@color/gray"

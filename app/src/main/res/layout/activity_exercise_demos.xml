@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="-20dp"
         android:layout_marginTop="-44dp"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:text="@string/txtViewExDemos"
         android:textColor="@color/white"
         android:textSize="24sp"
