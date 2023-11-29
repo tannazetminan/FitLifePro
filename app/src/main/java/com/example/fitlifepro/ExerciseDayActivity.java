@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,6 +46,8 @@ public class ExerciseDayActivity extends AppCompatActivity {
         Button btnDone = findViewById(R.id.btnDoneExercise);
 
         txtDayX.setText(dayX);
+        txtDayX.setTextSize(18);
+        txtDayX.setTextColor(Color.LTGRAY);
 
         //initialize the Database Manager
         dbManager = new DatabaseManager(this);

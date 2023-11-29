@@ -47,7 +47,7 @@
     <string name="btnRemAddBack">Back</string>
     <string name="btnRemSave">Save</string>
     <string name="editTextMemo">Enter a short reminder here.</string>
-    <string name="txtViewRemAdd">Setting a date and a reminder</string>
+    <string name="txtViewRemAdd">Schedule</string>
     <string name="txtViewRemView">Checking reminders</string>
     <string name="txtViewRemViewSelected">Memo selected: </string>
     <string name="btnRemViewBack">Back</string>

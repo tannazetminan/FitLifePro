@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -26,15 +27,10 @@ public class NutritionGuidanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_guidance);
 
-        btnNutGuideBack = findViewById(R.id.btnNutGuideBack);
-        btnNutGuideRem = findViewById(R.id.btnNutGuideRem);
-
-        btnNutGuideBack.setOnClickListener((View view) -> {
-            startActivity(new Intent(NutritionGuidanceActivity.this, HomePageActivity.class));
-        });
-
-        btnNutGuideRem.setOnClickListener((View view) -> {
-            startActivity(new Intent(NutritionGuidanceActivity.this, ReminderAddActivity.class));
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
+        btnBack.setOnClickListener((View view) -> {
+            Intent intent = new Intent(NutritionGuidanceActivity.this, HomePageActivity.class);
+            startActivity(intent);
         });
 
         loadVideos();

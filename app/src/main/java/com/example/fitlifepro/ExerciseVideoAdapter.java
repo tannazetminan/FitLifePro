@@ -1,5 +1,6 @@
 package com.example.fitlifepro;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,8 @@ public class ExerciseVideoAdapter extends BaseAdapter
         TextView txtViewExDemoWebView = view.findViewById(R.id.txtViewExDemoWebView);
         // Dynamically assigning VideoName
         txtViewExDemoWebView.setText(AdapterVideos.get(i).getVideoName());
+        txtViewExDemoWebView.setTextSize(16);
+        txtViewExDemoWebView.setTextColor(Color.LTGRAY);
 
         // Finding WebView inside layout_exdemo_webview.xml
         WebView webViewExDemo = view.findViewById(R.id.webViewExDemo);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,6 @@ public class ExerciseDemosActivity extends AppCompatActivity {
     List<String> URLs = new ArrayList<>();
     List<Video> VideoList = new ArrayList<>();
 
-    Button btnExDemosBack;
-    Button btnExDemosRem;
-
     ListView listViewExDemos;
 
     @Override
@@ -26,15 +24,10 @@ public class ExerciseDemosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_demos);
 
-        btnExDemosBack = findViewById(R.id.btnExDemosBack);
-        btnExDemosRem = findViewById(R.id.btnExDemosRem);
-
-        btnExDemosBack.setOnClickListener((View view) -> {
-            startActivity(new Intent(ExerciseDemosActivity.this, HomePageActivity.class));
-        });
-
-        btnExDemosRem.setOnClickListener((View view) -> {
-            startActivity(new Intent(ExerciseDemosActivity.this, ReminderAddActivity.class));
+        ImageView btnBack = findViewById(R.id.imgViewBackToExerciseList);
+        btnBack.setOnClickListener((View view) -> {
+            Intent intent = new Intent(ExerciseDemosActivity.this, HomePageActivity.class);
+            startActivity(intent);
         });
 
         loadVideos();

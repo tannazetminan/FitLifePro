@@ -1,5 +1,6 @@
 package com.example.fitlifepro;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,16 +63,21 @@ public class ReminderAdapter extends BaseAdapter
                     inflate(R.layout.layout_reminder, viewGroup, false);
         }
 
-        // Finding txtViewRemDate inside layout_reminder.xml
-        TextView txtViewRemDate = view.findViewById(R.id.txtViewRemDate);
-        // Dynamically setting
-        txtViewRemDate.setText(adapterReminder.get(i).getRemDate());
-
         // Finding txtViewRemMemo inside layout_reminder.xml
         TextView txtViewRemMemo = view.findViewById(R.id.txtViewRemMemo);
         // Dynamically setting
         txtViewRemMemo.setText(adapterReminder.get(i).getRemMemo());
+        txtViewRemMemo.setTextSize(18);
+        txtViewRemMemo.setTextColor(Color.LTGRAY);
 
+
+        // Finding txtViewRemDate inside layout_reminder.xml
+        TextView txtViewRemDate = view.findViewById(R.id.txtViewRemDate);
+        // Dynamically setting
+        txtViewRemDate.setText(adapterReminder.get(i).getRemDate());
+        txtViewRemDate.setTextSize(16);
+        txtViewRemDate.setTextColor(Color.WHITE);
+        txtViewRemDate.setPadding(0,10,0,0);
         return view;
     }
 }

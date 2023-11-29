@@ -60,8 +60,8 @@ public class ReminderAddActivity extends AppCompatActivity {
                 selected_month = month + 1;
                 selected_day = day;
 
-                Toast.makeText(ReminderAddActivity.this,
-                        selected_year + "/" + selected_month + "/" + selected_day, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ReminderAddActivity.this,
+//                        selected_year + "/" + selected_month + "/" + selected_day, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -83,7 +83,7 @@ public class ReminderAddActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy", Locale.getDefault());
         calendar.setTimeInMillis(date);
         String selected_date = simpleDateFormat.format(calendar.getTime());
-        Toast.makeText(this, selected_date, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, selected_date, Toast.LENGTH_SHORT).show();
     }
 
     public void setDate(int day, int month, int year){

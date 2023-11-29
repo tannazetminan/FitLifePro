@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/exercisec_weight"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".ReminderAddActivity">
@@ -16,7 +17,7 @@
         android:fontFamily="@font/quicksand_medium"
         android:gravity="center_horizontal"
         android:text="@string/txtViewRemAdd"
-        android:textColor="@color/gray"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -30,6 +31,7 @@
             android:id="@+id/btnRemAddBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemAddBack"
@@ -40,6 +42,8 @@
             android:id="@+id/btnRemSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemSave"
@@ -50,6 +54,7 @@
             android:id="@+id/btnRemViewAll"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemViewAll"
@@ -61,18 +66,26 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="30dp"
+        android:background="#AEFFFFFF"
+        android:selectedWeekBackgroundColor="#FF5722" />
 
     <EditText
         android:id="@+id/editTextMemo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.AutoCompleteTextView"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:background="#EBFFFFFF"
         android:ems="10"
         android:fontFamily="@font/quicksand_medium"
         android:gravity="center_horizontal"
         android:hint="@string/editTextMemo"
         android:inputType="text"
-        android:textSize="25sp"
+        android:padding="10sp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </LinearLayout>

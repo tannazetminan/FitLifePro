@@ -2,21 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800">
+    android:background="#000000">
 
     <!-- Home page Button with custom background -->
 
     <!-- WebView to display the external webpage -->
     <Button
         android:id="@+id/btnPreviousPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#444444"
+        android:layout_width="155dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
         android:onClick="goBackToHomePage"
-        android:text="Home Page"
-        android:textColor="#FFFFFF" />
+        android:text="Back to App"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <WebView
         android:id="@+id/webView"

@@ -79,5 +79,11 @@ public class HomePageActivity extends AppCompatActivity {
         Intent intent = new Intent(HomePageActivity.this, ProgressTrackerActivity.class);
         startActivity(intent);
     }
+
+    public void ReminderPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, ReminderAddActivity.class);
+        startActivity(intent);
+    }
+
 }
 

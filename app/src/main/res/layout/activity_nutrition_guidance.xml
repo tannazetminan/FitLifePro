@@ -4,48 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".NutritionGuidanceActivity">
 
+    <ImageView
+        android:id="@+id/imgViewBackToExerciseList"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-160dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_arrow" />
+
     <TextView
         android:id="@+id/txtViewNutGuide"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="-20dp"
+        android:layout_marginTop="-44dp"
         android:fontFamily="@font/quicksand_medium"
-        android:gravity="center_horizontal"
         android:text="@string/txtViewNutGuide"
-        android:textColor="@color/gray"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        />
 
-        <Button
-            android:id="@+id/btnNutGuideBack"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="@string/btnNutGuideBack"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnNutGuideRem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="@string/btnNutGuideRem"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <ListView
         android:id="@+id/listViewNutGuide"
@@ -54,6 +54,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"/>
 
 </LinearLayout>

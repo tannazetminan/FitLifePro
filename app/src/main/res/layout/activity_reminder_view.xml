@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/exercisec_dark"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".ReminderViewActivity">
@@ -17,7 +18,7 @@
         android:fontFamily="@font/quicksand_medium"
         android:gravity="center_horizontal"
         android:text="@string/txtViewRemView"
-        android:textColor="@color/gray"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -31,30 +32,34 @@
             android:id="@+id/btnRemViewBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemViewBack"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnRemViewAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemViewAdd"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnRemViewDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5sp"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_medium"
             android:text="@string/btnRemViewDelete"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -65,5 +70,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:background="#4F000000"
+        android:padding="10sp" />
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.fitlifepro;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,9 @@ public class NutritionVideoAdapter extends BaseAdapter
         TextView txtViewNutWebView = view.findViewById(R.id.txtViewNutWebView);
         // Dynamically assigning VideoName
         txtViewNutWebView.setText(AdapterVideos.get(i).getVideoName());
+        txtViewNutWebView.setTextSize(18);
+        txtViewNutWebView.setTextColor(Color.LTGRAY);
+
 
         // Finding WebView inside layout_nutrition_webview.xml
         WebView webViewNutGuide = view.findViewById(R.id.webViewNutGuide);
