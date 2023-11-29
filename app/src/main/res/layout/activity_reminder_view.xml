@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
         android:text="@string/txtViewRemView"
         android:textColor="@color/white"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5sp"
             android:layout_weight="1"
-            android:fontFamily="@font/quicksand_medium"
+            android:fontFamily="sans-serif"
             android:text="@string/btnRemViewBack"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:layout_weight="1"
-            android:fontFamily="@font/quicksand_medium"
+            android:fontFamily="sans-serif"
             android:text="@string/btnRemViewAdd"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5sp"
             android:layout_weight="1"
-            android:fontFamily="@font/quicksand_medium"
+            android:fontFamily="sans-serif"
             android:text="@string/btnRemViewDelete"
             android:textSize="18sp"
             android:textStyle="bold" />
