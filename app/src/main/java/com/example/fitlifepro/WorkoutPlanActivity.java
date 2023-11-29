@@ -1,16 +1,13 @@
 package com.example.fitlifepro;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -27,6 +25,9 @@ import java.util.Locale;
 
 public class WorkoutPlanActivity extends AppCompatActivity {
     DatabaseManager dbManager;
+    AlertDialog dialog;
+    AlertDialog.Builder builder;
+
     int lengthOfPlan = 0;
     boolean mondaySelected = false;
     boolean tuesdaySelected = false;
@@ -59,8 +60,6 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         CheckBox checkBoxAbdominalMuscles = findViewById(R.id.checkBoxAbdominalMuscles);
         CheckBox checkBoxArmMuscles = findViewById(R.id.checkBoxArmMuscles);
         CheckBox checkBoxLegMuscles = findViewById(R.id.checkBoxLegMuscles);
-
-
 
         //initialize the User Database Manager
         dbManager = new DatabaseManager(this);
@@ -151,64 +150,43 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
                 int total_days = lengthOfPlan * 7;
 
-                //insert in the database
-                dbManager.insertPlan(currentDate, lengthOfPlan, mondaySelected, tuesdaySelected, wednesdaySelected, thursdaySelected, fridaySelected, saturdaySelected, sundaySelected, chestSelected, abdominalSelected, armSelected, legSelected, total_days, 0);
-                Toast.makeText(WorkoutPlanActivity.this, "Workout Plan saved successfully.", Toast.LENGTH_SHORT).show();
-
-                //add plan to days_tracker table
-                //for the current design, max length of plan that can be selected is 4 weeks or 28 days
-                SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
-                Date d = df.parse(currentDate);
-                String dayOfTheWeek = sdf.format(d);
-
-                String activity = null;
-                String previousDay = null;
-
-                int i;
-                for (i = 1; i <= 28; i++) {
-                    if (i == 1) {
-                        activity = getActivity(dayOfTheWeek);
-                        dbManager.insertDay(dayOfTheWeek, activity);
-                        previousDay = dayOfTheWeek;
-                    } else {
-                        if (previousDay.equals("Monday")) {
-                            activity = getActivity("Tuesday");
-                            dbManager.insertDay("Tuesday", activity);
-                            previousDay = "Tuesday";
-                        } else if (previousDay.equals("Tuesday")) {
-                            activity = getActivity("Wednesday");
-                            dbManager.insertDay("Wednesday", activity);
-                            previousDay = "Wednesday";
-                        } else if (previousDay.equals("Wednesday")) {
-                            activity = getActivity("Thursday");
-                            dbManager.insertDay("Thursday", activity);
-                            previousDay = "Thursday";
-                        } else if (previousDay.equals("Thursday")) {
-                            activity = getActivity("Friday");
-                            dbManager.insertDay("Friday", activity);
-                            previousDay = "Friday";
-                        } else if (previousDay.equals("Friday")) {
-                            activity = getActivity("Saturday");
-                            dbManager.insertDay("Saturday", activity);
-                            previousDay = "Saturday";
-                        } else if (previousDay.equals("Saturday")) {
-                            activity = getActivity("Sunday");
-                            dbManager.insertDay("Sunday", activity);
-                            previousDay = "Sunday";
-                        } else {
-                            activity = getActivity("Monday");
-                            dbManager.insertDay("Monday", activity);
-                            previousDay = "Monday";
+                //if user has already created workout plan
+                if (dbManager.hasWorkoutPlan() == true) {
+                    builder = new AlertDialog.Builder(WorkoutPlanActivity.this);
+                    builder.setTitle("Your current workout plan will be deleted. Do you still want to proceed?");
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dbManager.deletePlan();
+                            dbManager.resetIDWorkoutPlan();
+                            dbManager.deleteDaysTracker();
+                            dbManager.resetIDDaysTracker();
+                            try {
+                                savePlan(currentDate, total_days);
+                            } catch (ParseException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
-                    }
-                };
+                    });
+
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(WorkoutPlanActivity.this, HomePageActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    dialog = builder.create();
+                    dialog.show();
+                } else {
+                    savePlan(currentDate, total_days);
+                }
 
             }catch (Exception ex) {
                 ex.printStackTrace();
             }
-            Intent intent = new Intent(WorkoutPlanActivity.this, HomePageActivity.class);
-            startActivity(intent);
         });
+
     }
 
 
@@ -253,5 +231,62 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         }
 
         return activity;
+    }
+
+    public void savePlan(String currentDate, int total_days) throws ParseException {
+        //insert in the database
+        dbManager.insertPlan(currentDate, lengthOfPlan, mondaySelected, tuesdaySelected, wednesdaySelected, thursdaySelected, fridaySelected, saturdaySelected, sundaySelected, chestSelected, abdominalSelected, armSelected, legSelected, total_days, 0);
+        Toast.makeText(WorkoutPlanActivity.this, "Workout Plan saved successfully.", Toast.LENGTH_SHORT).show();
+
+        //add plan to days_tracker table
+        //for the current design, max length of plan that can be selected is 4 weeks or 28 days
+        SimpleDateFormat df = new SimpleDateFormat("MMM-dd-yyyy", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = df.parse(currentDate);
+        String dayOfTheWeek = sdf.format(d);
+
+        String activity = null;
+        String previousDay = null;
+
+        int i;
+        for (i = 1; i <= 28; i++) {
+            if (i == 1) {
+                activity = getActivity(dayOfTheWeek);
+                dbManager.insertDay(dayOfTheWeek, activity);
+                previousDay = dayOfTheWeek;
+            } else {
+                if (previousDay.equals("Monday")) {
+                    activity = getActivity("Tuesday");
+                    dbManager.insertDay("Tuesday", activity);
+                    previousDay = "Tuesday";
+                } else if (previousDay.equals("Tuesday")) {
+                    activity = getActivity("Wednesday");
+                    dbManager.insertDay("Wednesday", activity);
+                    previousDay = "Wednesday";
+                } else if (previousDay.equals("Wednesday")) {
+                    activity = getActivity("Thursday");
+                    dbManager.insertDay("Thursday", activity);
+                    previousDay = "Thursday";
+                } else if (previousDay.equals("Thursday")) {
+                    activity = getActivity("Friday");
+                    dbManager.insertDay("Friday", activity);
+                    previousDay = "Friday";
+                } else if (previousDay.equals("Friday")) {
+                    activity = getActivity("Saturday");
+                    dbManager.insertDay("Saturday", activity);
+                    previousDay = "Saturday";
+                } else if (previousDay.equals("Saturday")) {
+                    activity = getActivity("Sunday");
+                    dbManager.insertDay("Sunday", activity);
+                    previousDay = "Sunday";
+                } else {
+                    activity = getActivity("Monday");
+                    dbManager.insertDay("Monday", activity);
+                    previousDay = "Monday";
+                }
+            }
+        };
+        Intent intent = new Intent(WorkoutPlanActivity.this, HomePageActivity.class);
+        startActivity(intent);
     }
 }

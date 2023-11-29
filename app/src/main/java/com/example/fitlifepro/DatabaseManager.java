@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 
 import java.sql.SQLDataException;
 
@@ -129,6 +130,12 @@ public class DatabaseManager {
     public void deleteUser() {
         database.delete(DatabaseHelper.USER_DATABASE_TABLE, null, null);
     }
+    public void deletePlan() {
+        database.delete(DatabaseHelper.WP_DATABASE_TABLE, null, null);
+    }
+    public void deleteDaysTracker() {
+        database.delete(DatabaseHelper.TRACKER_DATABASE_TABLE, null, null);
+    }
 
     public boolean hasData() {
         boolean hasData = false;
@@ -141,6 +148,27 @@ public class DatabaseManager {
         }
 
         return hasData;
+    }
+
+    public boolean hasWorkoutPlan() {
+        boolean hasWorkoutPlan = false;
+        Cursor cur = database.rawQuery("SELECT COUNT(*) FROM " + DatabaseHelper.WP_DATABASE_TABLE, null);
+        if (cur != null) {
+            cur.moveToFirst();                       // Always one row returned.
+            if (cur.getInt (0) == 0) {               // Zero count means empty table.
+                hasWorkoutPlan = false;
+            } else {hasWorkoutPlan = true;}
+        }
+
+        return hasWorkoutPlan;
+    }
+
+    public void resetIDWorkoutPlan() {
+        database.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + DatabaseHelper.WP_DATABASE_TABLE + "'");
+    }
+
+    public void resetIDDaysTracker() {
+        database.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + DatabaseHelper.TRACKER_DATABASE_TABLE + "'");
     }
 }
 
