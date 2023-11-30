@@ -49,7 +49,7 @@
     <string name="editTextMemo">Enter a short reminder here.</string>
     <string name="txtViewRemAdd">Schedule</string>
     <string name="txtViewRemView">Checking reminders</string>
-    <string name="txtViewRemViewSelected">Memo selected: </string>
+    <string name="txtViewRemViewSelected">Select memo and click delete</string>
     <string name="btnRemViewBack">Back</string>
     <string name="btnRemViewDelete">Delete</string>
     <string name="txtViewRemMemo">reminder memo</string>

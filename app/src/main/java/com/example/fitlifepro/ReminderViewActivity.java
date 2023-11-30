@@ -45,7 +45,7 @@ public class ReminderViewActivity extends AppCompatActivity {
                 (AdapterView<?> adapterView, View view, int i, long l) -> {
                     myAdapter.setSelectedInd(i);
                     myReminder = (Reminder) myAdapter.getItem(i);
-                    txtViewRemView.setText(R.string.txtViewRemViewSelected + myReminder.getRemMemo());
+                    txtViewRemView.setText(R.string.txtViewRemViewSelected);
         });
 
         btnRemViewBack.setOnClickListener((View view) -> {
