@@ -85,5 +85,10 @@ public class HomePageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void SettingPressed(View v) {
+        Intent intent = new Intent(HomePageActivity.this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
 }
 
